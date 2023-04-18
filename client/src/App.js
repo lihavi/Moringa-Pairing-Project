@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Homepage from './components/Homepage';
+import SignupForm from './components/SignupForm';
+import LoginForm from './components/LoginForm';
+import Navbar from './components/Navbar';
+import Students from './components/Students';
+import Messaging from './components/Messaging';
+import Pairing from './components/Pairing';
+import Feedback from './components/Feedback';
+import Instructor from './components/Instructor';
+import Footer from './components/Footer';
+import'./App.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/loginform" element={<LoginForm />} />
+        <Route path="/signupform" element={<SignupForm/>} />
+        <Route path="/students" element={<Students/>} />
+        <Route path="/instructor" element={<Instructor/>} />
+      </Routes>
+      <Footer />
+    </Router>
+    
   );
 }
 

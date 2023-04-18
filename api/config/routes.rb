@@ -13,4 +13,17 @@ Rails.application.routes.draw do
   post "reset_password", to: "users#reset_password"
   put "update_password/:reset_password_token", to: "users#update_password"
   put "reset_password/:reset_password_token", to: "users#update_password"
+
+ # pairs
+  post '/pair_students', to: 'pairs#pair_students'
+  get '/pairs', to: 'pairs#index'
+  get '/pairs/create', to: 'pairs#new'
+
+
+
+
+ 
+
+
 end
+ #

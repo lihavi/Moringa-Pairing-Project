@@ -5,6 +5,10 @@ import SignupForm from './SignupForm';
 import LoginForm from './LoginForm';
 import Navbar from './Navbar';
 import Students from './Students';
+import Messaging from './Messaging';
+import Pairing from './Pairing';
+import Feedback from './Feedback';
+import Instructor from './Instructor';
 
 function App() {
   return (

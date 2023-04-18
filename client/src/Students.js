@@ -1,11 +1,6 @@
-import React from 'react';
-function Students(){
-    return(
-        <div>
-        
-        </div>
-    )
+import React, { useState, useEffect } from 'react';
 
+function Students(){
 
 }
 export default Students;

@@ -1,6 +1,16 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  # # For student
+  # root to: 'students#dashboard', constraints: lambda { |request| request.env['warden'].user&.student? }
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  # user login/register
+  post "/users/login", to: "authentication#login"
+  post "/users/register", to: "users#create"
+#admin
+  post "data/admin", to: "admin#create"
+#student
+  post "data/student", to: "student#create"
+  # reset password
+  post "reset_password", to: "users#reset_password"
+  put "update_password/:reset_password_token", to: "users#update_password"
+  put "reset_password/:reset_password_token", to: "users#update_password"
 end

@@ -9,6 +9,10 @@ import Messaging from './components/Messaging';
 import Pairing from './components/Pairing';
 import Feedback from './components/Feedback';
 import Instructor from './components/Instructor';
+import Footer from './components/Footer';
+import'./App.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+
 
 function App() {
   return (
@@ -17,8 +21,12 @@ function App() {
         <Route path="/" element={<Homepage />} />
         <Route path="/loginform" element={<LoginForm />} />
         <Route path="/signupform" element={<SignupForm/>} />
+        <Route path="/students" element={<Students/>} />
+        <Route path="/instructor" element={<Instructor/>} />
       </Routes>
+      <Footer />
     </Router>
+    
   );
 }
 

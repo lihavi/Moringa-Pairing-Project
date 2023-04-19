@@ -18,28 +18,62 @@ User.create!(
   ]
 )
 
+require 'faker'
 
-Student.create!(
-  fullname: "John Doe",
-  grade: 85,
-  user_id: 2
-)
+# Create 10 users with random roles (either 'student' or 'instructor')
+10.times do
+  role = ['student', 'instructor'].sample
+  User.create(
+    username: Faker::Internet.username,
+    full_name: Faker::Name.name,
+    email: Faker::Internet.email,
+    password: 'password',
+    role: role
+  )
+end
 
-Student.create!(
-  fullname: "Jane Smith",
-  grade: 92,
-  user_id: 4
-)
+# Create 5 instructors, each associated with a user
+5.times do
+  user = User.where(role: 'instructor').sample
+  Instructor.create(
+    user_id: user.id,
+    name: user.full_name,
+    email: user.email
+  )
+end
 
-Student.create!(
-  fullname: "Mark Johnson",
-  grade: 78,
-  user_id: 5
-)
+# Create 10 random pairs for week 1
+students = Student.all.sample(10)
+pairs = students.each_slice(2).to_a
+pairs << [students.last, Student.all.sample]
+pairs.each do |pair|
+  Pair.create(
+    week_no: 1,
+    student1_id: pair[0].id,
+    student2_id: pair[1].id
+  )
+end
 
+# Generate feedback for each pair
+Pair.all.each do |pair|
+  Feedback.create(
+    user_id: pair.student1.user_id,
+    instructor_id: Instructor.all.sample.user_id,
+    comment: Faker::Lorem.paragraph
+  )
+  Feedback.create(
+    user_id: pair.student2.user_id,
+    instructor_id: Instructor.all.sample.user_id,
+    comment: Faker::Lorem.paragraph
+  )
+end
 
-Instructor.create!(
-  fullname: "Mad Ting",
-  email: "ting@example.com",
-  user_id: 1
-)
+# Generate some messaging data
+User.all.each do |user|
+  # Send a message to a random recipient
+  Messaging.create(
+    sender_id: user.id,
+    recipient_id: User.where.not(id: user.id).sample.id,
+    content: Faker::Lorem.paragraph
+  )
+end

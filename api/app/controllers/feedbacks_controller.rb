@@ -12,7 +12,7 @@ class FeedbacksController < ApplicationController
       render json: feedback
     end
   
-    # POST /feedbacks
+    # POST /feedback
     def create
       feedback = Feedback.new(feedback_params)
   

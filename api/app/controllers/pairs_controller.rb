@@ -9,15 +9,19 @@ class PairsController < ApplicationController
     def new
       @pair = Pair.new
     end
-  
+
+    
     def create
       @pair = Pair.new(pair_params)
       if @pair.save
-        redirect_to pairs_path
+        head :no_content
       else
-        render :new
+        render json: { errors: @pair.errors.full_messages }, status: :unprocessable_entity
       end
     end
+    
+    
+    
   
     def edit
       @pair = Pair.find(params[:id])

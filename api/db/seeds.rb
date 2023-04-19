@@ -8,15 +8,15 @@
 # user = User.new(email: 'example@example.com', password: 'password', role: 'admin')
 
 
-# User.create!(
-#   [
-#     { fullname: "John Smith", email: "john.smith@example.com", password: "password123", role: "admin" },
-#     { fullname: "Jane Doe", email: "jane.doe@example.com", password: "password456", role: "student" },
-#     { fullname: "Mark Johnson", email: "mark.johnson@example.com", password: "password789", role: "admin" },
-#     { fullname: "Alice Williams", email: "alice.williams@example.com", password: "password123", role: "student" },
-#     { fullname: "Bob Brown", email: "bob.brown@example.com", password: "password456", role: "student" }
-#   ]
-# )
+User.create!(
+  [
+    { fullname: "John Smith", email: "john.smith@example.com", password: "password123", role: "admin" },
+    { fullname: "Jane Doe", email: "jane.doe@example.com", password: "password456", role: "student" },
+    { fullname: "Mark Johnson", email: "mark.johnson@example.com", password: "password789", role: "admin" },
+    { fullname: "Alice Williams", email: "alice.williams@example.com", password: "password123", role: "student" },
+    { fullname: "Bob Brown", email: "bob.brown@example.com", password: "password456", role: "student" }
+  ]
+)
 
 
 Student.create!(
@@ -35,4 +35,11 @@ Student.create!(
   fullname: "Mark Johnson",
   grade: 78,
   user_id: 5
+)
+
+
+Instructor.create!(
+  fullname: "Mad Ting",
+  email: "ting@example.com",
+  user_id: 1
 )

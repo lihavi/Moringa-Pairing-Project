@@ -1,3 +1,6 @@
 class Instructor < ApplicationRecord
-    has_many :user
+    belongs_to :user
+    has_many :feedbacks
+    # Validations
+    validates :name, presence: true
 end

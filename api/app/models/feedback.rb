@@ -1,5 +1,8 @@
 class Feedback < ApplicationRecord
-    belongs_to :instructor
+    # Associations
     belongs_to :pair
-    
+    belongs_to :instructor
+
+    # Validations
+    validates :comment, presence: true
 end

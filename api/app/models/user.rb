@@ -21,5 +21,5 @@ class User < ApplicationRecord
     def reset_password_token_valid?
       reset_password_token.present? && reset_password_token_expires_at.present? && reset_password_token_expires_at > Time.now
     end
-  end
+end
   

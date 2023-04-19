@@ -29,6 +29,7 @@ function App() {
    <Routes>
    <Route path="/loginform" element={!token ? <LoginForm setToken={setToken} /> : <Homepage token={token} />} />
      <Route path="/signupform" element={!token ? <SignupForm setToken={setToken} /> : <Homepage token={token} />} />
+    {/*  <Route path="/pairing" element={!token ? <Pairing setToken={setToken} /> : <Homepage token={token} />} /> */}
      <Route path="/" element={token ? <Homepage token={token} /> : <LoginForm setToken={setToken} />} />
    
    </Routes>

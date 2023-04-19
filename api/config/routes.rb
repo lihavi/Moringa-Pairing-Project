@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   # # For student
   # root to: 'students#dashboard', constraints: lambda { |request| request.env['warden'].user&.student? }
   resources :students, only: [:index, :show, :update, :create, :destroy]
-
   # user login/register
   post "/users/login", to: "authentication#login"
   post "/users/register", to: "users#create"

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   # user login/register
   post "/users/login", to: "authentication#login"
   post "/users/register", to: "users#create"
+  get "/users", to: "users#index"
 #admin
   post "data/admin", to: "admin#create"
 #student

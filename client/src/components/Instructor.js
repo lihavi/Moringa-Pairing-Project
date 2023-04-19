@@ -1,7 +1,11 @@
-import React from 'react';
+import React from 'react'
 
-function Instructor(){
-
+function Instructor() {
+  return (
+    <div className="container" >
+      <p>admin</p>
+    </div>
+  )
 }
 
-export default Instructor;
+export default Instructor

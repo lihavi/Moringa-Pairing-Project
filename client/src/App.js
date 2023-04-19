@@ -13,30 +13,28 @@ import'./App.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import NavBar from './components/Navbar';
 
-
 function App() {
   const [token, setToken] = useState(localStorage.getItem('token') || null);
-
 
   const logout = () => {
     localStorage.removeItem('token');
     setToken(null);
   };
+
   return (
     <Router>
-    <NavBar logout={logout} token={token} />
-   <main>
-   <Routes>
-   <Route path="/loginform" element={!token ? <LoginForm setToken={setToken} /> : <Homepage token={token} />} />
-     <Route path="/signupform" element={!token ? <SignupForm setToken={setToken} /> : <Homepage token={token} />} />
-     <Route path="/" element={token ? <Homepage token={token} /> : <LoginForm setToken={setToken} />} />
-   
-   </Routes>
-   </main>
-   <Footer />
-
- </Router>
-    
+      <NavBar logout={logout} token={token} />
+      <main>
+        <Routes>
+          <Route path="/loginform" element={!token ? <LoginForm setToken={setToken} /> : <Homepage token={token} />} />
+          <Route path="/signupform" element={!token ? <SignupForm setToken={setToken} /> : <Homepage token={token} />} />
+          <Route path="/" element={token ? <Homepage token={token} /> : <LoginForm setToken={setToken} />} />
+          <Route path="/instructor" element={token && token.user && (token.user.role === "admin") ? <Instructor /> : null} />
+         <Route />
+        </Routes>
+      </main>
+      <Footer />
+    </Router>
   );
 }
 

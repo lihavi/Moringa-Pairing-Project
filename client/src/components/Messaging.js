@@ -1,7 +1,11 @@
-import React from 'react';
+import React from 'react'
 
-function Messaging(){
-
+function Messaging() {
+  return (
+    <div>
+      <p>messaging</p>
+    </div>
+  )
 }
 
-export default Messaging;
+export default Messaging

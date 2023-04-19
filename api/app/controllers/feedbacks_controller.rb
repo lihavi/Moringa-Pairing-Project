@@ -1,48 +1,52 @@
 class FeedbacksController < ApplicationController
+    before_action :set_feedback, only: [:show, :update, :destroy]
+  
     # GET /feedbacks
     def index
-        feedbacks = Feedback.all
-        render json: feedbacks
+      feedbacks = Feedback.all
+      render json: feedbacks
     end
-        
-    # GET /feedbacks/:id
+  
+    # GET /feedbacks/1
     def show
-        feedbacks = Admin.find(params[:id])
-        render json: feedbacks
+      render json: feedback
     end
-        
+  
     # POST /feedbacks
     def create
-        feedbacks = Admin.new(feedback_params)
-        
-            if feedbacks.save
-                render json: feedbacks, status: :created
-            else
-                render json: feedbacks.errors, status: :unprocessable_entity
-            end
+      feedback = Feedback.new(feedback_params)
+  
+      if feedback.save
+        render json: feedback, status: :created, location: feedback
+      else
+        render json: feedback.errors, status: :unprocessable_entity
+      end
     end
-        
-    # PATCH/PUT /feedback/:id
+  
+    # PATCH/PUT /feedbacks/1
     def update
-        feedback = Admin.find(params[:id])
-        
-            if feedback.update(feedback_params)
-                render json: feedback, status: :ok
-            else
-                render json: feedback.errors, status: :unprocessable_entity
-            end
+      if feedback.update(feedback_params)
+        render json: feedback
+      else
+        render json: feedback.errors, status: :unprocessable_entity
+      end
     end
-        
-    # DELETE /feedback/:id
+  
+    # DELETE /feedbacks/1
     def destroy
-        feedback = Admin.find(params[:id])
-        feedback.destroy
-        head :no_content
+      feedback.destroy
     end
-        
+  
     private
-        
-    def feedback_params
-        params.require(:feedback).permit(:pair_id, :instructor_id, :comment)
-    end
+      # Use callbacks to share common setup or constraints between actions.
+      def set_feedback
+        feedback = Feedback.find(params[:id])
+        render json: feedback
+      end
+  
+      # Only allow a list of trusted parameters through.
+      def feedback_params
+        params.require(:feedback).permit(:user_id, :instructor_id, :comment)
+      end
 end
+  

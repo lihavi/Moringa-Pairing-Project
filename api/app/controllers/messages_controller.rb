@@ -1,48 +1,55 @@
 class MessagesController < ApplicationController
+    before_action :set_message, only: [:show, :update, :destroy]
+  
     # GET /messages
     def index
-        messages = Admin.all
-        render json: messages
+      messages = Message.all
+      render json: messages
     end
-    
-    # GET /messages/:id
+  
+    # GET /messages/1
     def show
-        messages = Admin.find(params[:id])
-        render json: messages
+        message = Message.find(params[:id])
+      render json: message
     end
-    
-    # POST /message/:id
+  
+    # POST /messages
     def create
-        message = Admin.new(message_params)
-    
-        if message.save
-            render json: message, status: :created
-        else
-            render json: message.errors, status: :unprocessable_entity
-        end
+      message = Message.new(message_params)
+  
+      if message.save
+        render json: message, status: :created, location: message
+      else
+        render json: message.errors, status: :unprocessable_entity
+      end
     end
-    
-    # PATCH/PUT /message/:id
+  
+    # PATCH/PUT /messages/1
     def update
-        message = Admin.find(params[:id])
-    
-        if message.update(message_params)
-            render json: message, status: :ok
-        else
-            render json: message.errors, status: :unprocessable_entity
-        end
+      if message.update(message_params)
+        render json: message
+      else
+        render json: message.errors, status: :unprocessable_entity
+      end
     end
-    
-    # DELETE /message/:id
+  
+    # DELETE /messages/1
     def destroy
-        message = Admin.find(params[:id])
-        message.destroy
-        head :no_content
+      message.destroy
+      render json: { message: 'Message was successfully destroyed.' }
     end
-    
+  
     private
-    
+  
+    # Use callbacks to share common setup or constraints between actions.
+    def set_message
+      message = Message.find(params[:id])
+      render json: message
+    end
+  
+    # Only allow a list of trusted parameters through.
     def message_params
-        params.require(:message).permit(:sender_user_id, :recipient_user_id, :content, :pair_id)
+      params.require(:message).permit(:sender_user_id, :recipient_user_id, :content)
     end
 end
+  

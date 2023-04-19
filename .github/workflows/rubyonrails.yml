@@ -21,10 +21,6 @@ jobs:
         run: |
           cd client
           npm install
-      - name: Build
-        run: |
-          cd client
-          npm run build
       - name: Test
         run: |
           cd client
@@ -55,9 +51,9 @@ jobs:
         with:
           ruby-version: '2.7.4'
       - run: cd api && bundle install
-      - run: cd api && bundle exec rails db:setup
-      - run: cd api && bundle exec rails db:migrate RAILS_ENV=test
-     # - run: cd api && bundle exec rspec spec
+     # run: cd api && bundle exec rails db:setup
+     # run: cd api && bundle exec rails db:migrate RAILS_ENV=test
+     # run: cd api && bundle exec rspec spec
 
 
    

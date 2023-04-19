@@ -10,7 +10,7 @@ function Homepage() {
         <p>  Pairs students randomly and keeps track of each pair.</p>
         <Link to="/loginform" className="btn btn-primary">Login</Link>
         <Link to="/signupform" className="btn btn-primary">Sign up</Link>
-        <Link to="/students" className="btn btn-primary">Students</Link>
+        <Link to="/instructor" className="btn btn-primary">Instructor</Link>
       </div>
     </div>
   );

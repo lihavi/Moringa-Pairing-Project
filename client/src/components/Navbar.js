@@ -44,6 +44,9 @@ function NavBar({ token, logout, user  }) {
   <div className="nav-item pt-0">
   <Link to="/loginform"><button className="btn btn-outline-primary btn-sm me-2" href="login" type="submit">Login</button></Link> 
   <Link to="/signupform"><button className="btn btn-outline-primary btn-sm  " href="register" type="submit">Signup</button></Link> 
+  <Link to="/pairing"><button className="btn btn-outline-primary btn-sm  " href="pairing" type="submit">Pairing</button></Link> 
+  
+  
   </div>
 </>
         )}

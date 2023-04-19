@@ -19,20 +19,38 @@
 # )
 
 
-Student.create!(
-  fullname: "John Doe",
-  grade: 85,
-  user_id: 2
-)
+# Student.create!(
+#   fullname: "John Doe",
+#   grade: 85,
+#   user_id: 2
+# )
 
-Student.create!(
-  fullname: "Jane Smith",
-  grade: 92,
-  user_id: 4
-)
+# Student.create!(
+#   fullname: "Jane Smith",
+#   grade: 92,
+#   user_id: 4
+# )
 
-Student.create!(
-  fullname: "Mark Johnson",
-  grade: 78,
-  user_id: 5
-)
+# Student.create!(
+#   fullname: "Mark Johnson",
+#   grade: 78,
+#   user_id: 5
+# )
+require 'faker'
+
+# Create 10 users
+10.times do
+  User.create(
+    email: Faker::Internet.email,
+    password: Faker::Internet.password
+  )
+end
+
+# Create 50 students, each associated with a random user
+50.times do
+  Student.create(
+    fullname: Faker::Name.name,
+    grade: Faker::Number.between(from: 0.0, to: 10.0),
+    user: User.order("RANDOM()").first
+  )
+end

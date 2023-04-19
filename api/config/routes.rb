@@ -17,8 +17,10 @@ Rails.application.routes.draw do
 
  # pairs
   post '/pair_students', to: 'pairs#pair_students'
-  get '/pairs', to: 'pairs#index'
   get '/pairs/create', to: 'pairs#new'
+  post '/pairs', to: 'pairs#create'
+  get '/pairs/', to: 'pairs#index' 
+
 
 
 

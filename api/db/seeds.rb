@@ -38,6 +38,7 @@
 # )
 require 'faker'
 
+# puts Seeeddiiingg!!!!
 # Create 10 users
 10.times do
   User.create(
@@ -54,3 +55,8 @@ end
     user: User.order("RANDOM()").first
   )
 end
+
+
+
+
+

@@ -8,24 +8,32 @@
 # user = User.new(email: 'example@example.com', password: 'password', role: 'admin')
 
 
-User.create!(
-  [
-    { fullname: "John Smith", email: "john.smith@example.com", password: "password123", role: "admin" },
-    { fullname: "Jane Doe", email: "jane.doe@example.com", password: "password456", role: "student" },
-    { fullname: "Mark Johnson", email: "mark.johnson@example.com", password: "password789", role: "admin" },
-    { fullname: "Alice Williams", email: "alice.williams@example.com", password: "password123", role: "student" },
-    { fullname: "Bob Brown", email: "bob.brown@example.com", password: "password456", role: "student" }
-  ]
-)
+# User.create!(
+#   [
+#     { fullname: "John Smith", email: "john.smith@example.com", password: "password123", role: "admin" },
+#     { fullname: "Jane Doe", email: "jane.doe@example.com", password: "password456", role: "student" },
+#     { fullname: "Mark Johnson", email: "mark.johnson@example.com", password: "password789", role: "admin" },
+#     { fullname: "Alice Williams", email: "alice.williams@example.com", password: "password123", role: "student" },
+#     { fullname: "Bob Brown", email: "bob.brown@example.com", password: "password456", role: "student" }
+#   ]
+# )
 
 require 'faker'
 
+puts "Deleting existing data..."
+Pair.destroy_all
+Student.destroy_all
+User.destroy_all
+Instructor.destroy_all
+Feedback.destroy_all
+Message.destroy_all
+
+puts "Creating new data..."
 # Create 10 users with random roles (either 'student' or 'instructor')
 10.times do
-  role = ['student', 'instructor'].sample
+  role = ['student', 'admin'].sample
   User.create(
-    username: Faker::Internet.username,
-    full_name: Faker::Name.name,
+    fullname: Faker::Name.name,
     email: Faker::Internet.email,
     password: 'password',
     role: role
@@ -72,8 +80,10 @@ end
 User.all.each do |user|
   # Send a message to a random recipient
   Messaging.create(
-    sender_id: user.id,
-    recipient_id: User.where.not(id: user.id).sample.id,
+    sender_user_id: user.id,
+    recipient_user_id: User.where.not(id: user.id).sample.id,
     content: Faker::Lorem.paragraph
   )
 end
+
+puts "New data created!"

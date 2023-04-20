@@ -29,6 +29,7 @@ function App() {
 
   return (
     <Router>
+    
       <NavBar logout={logout} token={token} />
    
         <Routes>
@@ -67,6 +68,7 @@ function App() {
       
       <Footer />
     </Router>
+
   );
 }
 

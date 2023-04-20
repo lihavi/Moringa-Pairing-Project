@@ -6,7 +6,6 @@ import '../css/loginform.css'
 function LoginForm({ setToken, setUserRole }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -25,6 +24,7 @@ function LoginForm({ setToken, setUserRole }) {
   };
 
   return (
+
     <div className="section pt-0">
       <div className="container pt-0">
         <div className="row full-height justify-content-center pt-0">
@@ -86,3 +86,5 @@ function LoginForm({ setToken, setUserRole }) {
 }
 
 export default LoginForm;
+
+

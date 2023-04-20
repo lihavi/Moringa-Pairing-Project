@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import logo from '../assets/logo.png'
 
 function NavBar({ token, logout, user  }) {
-  
-
   return (
     <header className="pt-0">
       <div>
@@ -22,7 +20,10 @@ function NavBar({ token, logout, user  }) {
              <Link className="nav-link " to="/studentdashboard">student</Link>
           </li>
           <li className="nav-item">
-          <Link className="nav-link " to="/admindashboard">Admin</Link>
+          <Link className="nav-link " to="/admindashboard">Admin</Link> 
+          </li>
+          <li className="nav-item">
+          <Link className="nav-link " to="/pairing">Pairing</Link> 
           </li>
         </ul>
         <div className="d-flex">
@@ -44,6 +45,7 @@ function NavBar({ token, logout, user  }) {
   <div className="nav-item pt-0">
   <Link to="/loginform"><button className="btn btn-outline-primary btn-sm me-2" href="login" type="submit">Login</button></Link> 
   <Link to="/signupform"><button className="btn btn-outline-primary btn-sm  " href="register" type="submit">Signup</button></Link> 
+ 
   </div>
 </>
         )}

@@ -51,7 +51,50 @@ footer {
   .footer__social-media i.fa-google {
     color: #db4437;
   }
+
   .footer__logo {
     float: left;
   }
+
+  
+  .instructor-pairings {
+    margin: 2rem 0;
+  }
+  
+  .instructor-pairings h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .instructor-pairings ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .instructor-pairings li {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .instructor-pairings button {
+    margin-top: 1rem;
+  }
+  .instructor-container {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+  }
+  
+  .instructor-sidebar {
+    width: 200px;
+    
+  }
+  
+  .instructor-main {
+    flex: 1;
+    padding: 20px;
+  }
+  
+
   

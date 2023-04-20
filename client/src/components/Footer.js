@@ -1,14 +1,14 @@
 import React from 'react'
 import logo from '../assets/logo.png'
 
-function Footer() {
-  return (
-    <div>
-          <footer className="footer">
-     
+
+function Footer(){
+    return(
+    <footer className="footer">
+      <div className="container">
         <div className="footer__content">
-          <div className="footer__logo ms-5">
-            <img src={logo} width="200px" height="40px" align="left" alt="Logo" />
+          <div className="footer__logo">
+           <a href="/"> <img src={logo} width="70px" height="70px" align="left" alt="Logo" /></a>
           </div>
           <div className="footer__social-media">
             <a href="#">
@@ -26,8 +26,9 @@ function Footer() {
           </div>
      
       </div>
+      </div>
     </footer>
-    </div>
+    
   )
 }
 

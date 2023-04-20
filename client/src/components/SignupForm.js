@@ -92,7 +92,7 @@ function SignupForm({ setToken }) {
                         >
                           Register
                         </button>
-                        <p>Sign in to your account</p>
+                        <p>Already have an account? <a href="/">Login</a> </p>
                       </form>
                     </div>
                   </div>

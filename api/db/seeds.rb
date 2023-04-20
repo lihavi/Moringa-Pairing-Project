@@ -69,20 +69,20 @@ require 'faker'
 # end
 
 # puts "New data created!"
-=======
-# Create 10 users
-10.times do
-  User.create(
-    email: Faker::Internet.email,
-    password: Faker::Internet.password
-  )
-end
+# =======
+# # Create 10 users
+# 10.times do
+#   User.create(
+#     email: Faker::Internet.email,
+#     password: Faker::Internet.password
+#   )
+# end
 
 
 User.create!(
   [
-    { fullname: "John Smith", email: "john.smith@example.com", password: "password123", role: "admin" },
-    { fullname: "Jane Doe", email: "jane.doe@example.com", password: "password456", role: "student" },
+    { fullname: "John Smith", email: "john@gmail.com", password: "1111", role: "admin" },
+    { fullname: "Jane Doe", email: "jane@gmail.com", password: "1111", role: "student" },
     { fullname: "Mark Johnson", email: "mark.johnson@example.com", password: "password789", role: "admin" },
     { fullname: "Alice Williams", email: "alice.williams@example.com", password: "password123", role: "student" },
     { fullname: "Bob Brown", email: "bob.brown@example.com", password: "password456", role: "student" }
@@ -110,12 +110,12 @@ User.create!(
 require 'faker'
 
 # Create 10 users
-10.times do
-  User.create(
-    email: Faker::Internet.email,
-    password: Faker::Internet.password
-  )
-end
+# 10.times do
+#   User.create(
+#     email: Faker::Internet.email,
+#     password: Faker::Internet.password
+#   )
+# end
 
 
 # Create 50 students, each associated with a random user

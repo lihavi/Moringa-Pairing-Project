@@ -45,7 +45,8 @@ Rails.application.routes.draw do
   post '/pairs', to: 'pairs#create'
   get '/pairs/', to: 'pairs#index' 
 
-
+# get students
+get '/students', to: "students#index"
 
  #randomly pair students
   get '/pair_students', to: 'pairs#pair_students'

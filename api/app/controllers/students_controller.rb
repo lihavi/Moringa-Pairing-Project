@@ -1,14 +1,16 @@
 class StudentsController < ApplicationController
 
+  
+
     def dashboard
       # Render student dashboard view
     end
 
      #GET /students
-     def index
-      students = Student.all
-      render json: students, status: :ok
-     end
+     #   get all categories
+  def index
+    render json: Student.all
+  end
  
      #GET /students/:id
      def show
@@ -59,13 +61,13 @@ class StudentsController < ApplicationController
          student.destroy
          head :no_content
      else
-         render json: { error: "Student not found" }, status: :not not_found
+         render json: { error: "Student not found" }, status: :not_found
      end
  end
  
  private
  def student_params
-     params.permit(:fullname, :grade :user_id )
+     params.permit(:fullname, :grade, :user_id )
  
  end
     

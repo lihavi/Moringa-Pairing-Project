@@ -69,7 +69,7 @@ require 'faker'
 # end
 
 # puts "New data created!"
-=======
+
 # Create 10 users
 10.times do
   User.create(

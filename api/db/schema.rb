@@ -39,19 +39,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_19_060835) do
     t.datetime "updated_at", null: false
   end
 
-
-
-ActiveRecord::Schema[7.0].define(version: 2023_04_18_122228) do
-ActiveRecord::Schema[7.0].define(version: 2023_04_18_122227) do
-
-
-ActiveRecord::Schema[7.0].define(version: 2023_04_18_122228) do
-
-
-
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "pairs", force: :cascade do |t|
     t.string "my_custom_id"
     t.string "week_no"

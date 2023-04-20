@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
     skip_before_action :authorize_request, only: [:create, :reset_password, :update_password]
+
+    def index 
+      user = User.all
+    end
     
     def create
       user = User.new(user_params)

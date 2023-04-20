@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   # user login/register
   post "/users/login", to: "authentication#login"
   post "/users/register", to: "users#create"
+  get "/users", to: "users#index"
 #admin
   post "data/admin", to: "admin#create"
 #student
@@ -16,9 +17,10 @@ Rails.application.routes.draw do
   put "reset_password/:reset_password_token", to: "users#update_password"
 
  # pairs
+
   post '/pair_students', to: 'pairs#pair_students'
-  get '/pairs', to: 'pairs#index'
   get '/pairs/create', to: 'pairs#new'
+
   # Feedbacks routes
   get '/feedbacks', to: 'feedbacks#index'
   post '/feedback', to: 'feedbacks#create'
@@ -39,6 +41,26 @@ Rails.application.routes.draw do
   get '/message/:id', to: 'messages#show'
   put '/message/:id', to: 'messages#update'
   delete '/message/:id', to: 'messages#destroy'
+
+  post '/pairs', to: 'pairs#create'
+  get '/pairs/', to: 'pairs#index' 
+
+
+
+ #randomly pair students
+  get '/pair_students', to: 'pairs#pair_students'
+
+  # get '/pairs', to: 'pairs#index'
+  post '/pairs', to: 'pairs#create'
+  #get all pairs
+  get '/pairs', to: 'pairs#index' 
+  #delete all pairs
+
+
+
+
+ 
+
 
 end
 

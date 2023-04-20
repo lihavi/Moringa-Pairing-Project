@@ -1,25 +1,3 @@
-
-import React from "react";
-
-function Homepage() {
-  return (
-    <div className="home-container">
-      <div className="home-banner">
-        <img src="https://images.app.goo.gl/3BtkuNPo1JMRVwXV6" alt="Moringa Pair Logo" />
-        <h1>Moringa Pair</h1>
-        <p>  Pairs students randomly and keeps track of each pair.</p>
-
-        {/* <Link to="/loginform" className="btn btn-primary">Login</Link>
-        <Link to="/signupform" className="btn btn-primary">Sign up</Link>
-        <Link to="/students" className="btn btn-primary">Students</Link>
-        <Link to="/instructor" className="btn btn-primary">Instructor</Link> */}
-      </div>
-    </div>
-  );
-}
-
-export default Homepage;
-
 import TypeWriterEffect from "react-typewriter-effect";
 import React, { Component } from "react";
 import { Link } from "react-router-dom";

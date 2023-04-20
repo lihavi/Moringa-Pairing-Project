@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 
 function Instructor() {
@@ -35,7 +34,7 @@ function Instructor() {
       <div className="content">
         {/* Add existing content here */}
         <div className="instructor-header">
-          <img src={instructor.profilePicture} alt="Profile Picture" />
+          <img src={instructor.profilePicture} alt="ProfilePicture" />
           <h1>{instructor.name}</h1>
         </div>
         <div className="instructor-pairings">
@@ -55,16 +54,3 @@ function Instructor() {
 }
 
 export default Instructor;
-
-import React from 'react'
-
-function Instructor() {
-  return (
-    <div className="container" >
-      <p>admin</p>
-    </div>
-  )
-}
-
-export default Instructor
-

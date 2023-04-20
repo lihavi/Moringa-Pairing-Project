@@ -69,7 +69,7 @@ require 'faker'
 # end
 
 # puts "New data created!"
-=======
+
 # Create 10 users
 10.times do
   User.create(
@@ -109,6 +109,7 @@ User.create!(
 # )
 require 'faker'
 
+# puts Seeeddiiingg!!!!
 # Create 10 users
 10.times do
   User.create(
@@ -126,3 +127,8 @@ end
     user: User.order("RANDOM()").first
   )
 end
+
+
+
+
+

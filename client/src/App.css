@@ -2,16 +2,23 @@ footer {
     position: fixed;
     background-color: gray;
     bottom: 0;
+    display: relative;
+    height: 50px;
     left: 0;
     right: 0;
-    padding: 8px;
-    text-align: center;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
   }
   .footer__social-media a {
     color: #333;
     margin-right: 20px;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 25px;
+    display: relative;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
   }
   
   .footer__social-media a:hover {
@@ -19,13 +26,14 @@ footer {
   }
   
   .footer__social-media i {
-    display: inline-block;
-    height: 20px;
-    width: 20px;
-    line-height: 20px;
-    text-align: center;
+    display: relative;
+  padding-top: 2PX;
+    height: 30px;
+    width: 30px;
     border-radius: 50%;
-    background-color: #eaeaea;
+    background-color: #abdcf9;
+    float: center;
+
   }
   
   .footer__social-media i.fa-facebook-f {
@@ -42,5 +50,8 @@ footer {
   
   .footer__social-media i.fa-google {
     color: #db4437;
+  }
+  .footer__logo {
+    float: left;
   }
   

@@ -1,30 +1,34 @@
+import React from 'react'
+import logo from '../assets/logo.png'
 
-
-function Footer(){
-    return(
-    <footer className="footer">
-      <div className="container">
+function Footer() {
+  return (
+    <div>
+          <footer className="footer">
+     
         <div className="footer__content">
-          <div className="footer__logo">
-            <img src="" width="70px" height="70px" align="left" alt="Logo" />
+          <div className="footer__logo ms-5">
+            <img src={logo} width="200px" height="40px" align="left" alt="Logo" />
           </div>
           <div className="footer__social-media">
             <a href="#">
               <i className="fab fa-google"></i>
             </a>
             <a href="#">
-            <i class="fab fa-linkedin-in"></i>
+            <i className="fab fa-linkedin-in"></i>
             </a>
             <a href="#">
-            <i class="fab fa-facebook-f"></i>
+            <i className="fab fa-facebook-f"></i>
            </a>
            <a href="#">
-            <i class="fab fa-twitter"></i>
+            <i className="fab fa-twitter"></i>
            </a>
           </div>
-        </div>
+     
       </div>
     </footer>
-  );
+    </div>
+  )
 }
-export default Footer;
+
+export default Footer

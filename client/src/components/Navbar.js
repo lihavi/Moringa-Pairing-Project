@@ -19,10 +19,10 @@ function NavBar({ token, logout, user  }) {
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
           <li className="nav-item">
-             <Link className="nav-link " to="/messaging">student</Link>
+             <Link className="nav-link " to="/studentdashboard">student</Link>
           </li>
           <li className="nav-item">
-          <Link className="nav-link " to="/instructor">Admin</Link>
+          <Link className="nav-link " to="/admindashboard">Admin</Link>
           </li>
         </ul>
         <div className="d-flex">

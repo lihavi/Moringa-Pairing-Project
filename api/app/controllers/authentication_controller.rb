@@ -10,7 +10,7 @@ class AuthenticationController < ApplicationController
         user.update(role: 'admin')
         # Login as admin
         token = JWT.encode({ user_id: user.id }, Rails.application.secrets.secret_key_base)
-        render json: { message: "Logged in successfully as admin", user: user, token: token }
+        render json: { message: "Logged in successfully as admin", user: user, token: token, role: user.role }
       else
         user.update(role: 'student')
         # Login as student

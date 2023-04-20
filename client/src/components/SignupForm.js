@@ -24,25 +24,81 @@ function SignupForm({ setToken }) {
   };
   
     return (
-      <form className="signup-form" onSubmit={handleSubmit}>
-        <label className="signup-form__label">
-          Name:
-          <input className="signup-form__input" type="text" value={fullname} onChange={(e) => setFullname(e.target.value)} />
-        </label>
-        <label className="signup-form__label">
-          Email:
-          <input className="signup-form__input" type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-        </label>
-        <label className="signup-form__label">
-          Role:
-          <input className="signup-form__input" type="text" value={role} onChange={(e) => setRole(e.target.value)} />
-        </label>
-        <label className="signup-form__label">
-          Password:
-          <input className="signup-form__input" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-        </label>
-        <button className="signup-form__button" type="submit">Sign up</button>
-      </form>
+
+
+      <div className="section pt-0">
+      <div className="container pt-0">
+        <div className="row full-height justify-content-center pt-0">
+          <div className="col-12 py-5 pt-0">
+            <div className="section pb-0 pt-0 pt-sm-0 text-center pt-0">
+  
+              <div className="card-3d-wrap mx-auto pt-0">
+                <div className="card-3d-wrapper">
+  
+                  <div className="card-front">
+                    <div className="center-wrap">
+                      <form className="section text-center pt-0" onSubmit={handleSubmit}>
+                        <h4 className="mb-3 pb-3">Sign Up</h4>
+  
+                        <div className="form-group mt-2">
+                          <input
+                            type="text"
+                            className="form-style"
+                            id="fullname"
+                            placeholder="Fullname"
+                            value={fullname} onChange={(e) => setFullname(e.target.value)} 
+                            required
+                          />
+                          <i className="input-icon bi bi-person-fill-add"></i>
+                        </div>
+                        <div className="form-group mt-2">
+                          <input
+                            type="email"
+                            className="form-style"
+                            id="email"
+                            placeholder="Email"
+                            value={email} onChange={(e) => setEmail(e.target.value)} required
+                          />
+                          <i className=" input-icon bi bi-envelope-at-fill"></i>
+                        </div>
+                        <div className="form-group mt-2">
+                          <input
+                            type="role"
+                            className="form-style"
+                            id="role"
+                            placeholder="role"
+                            value={role} onChange={(e) => setRole(e.target.value)} required
+                          />
+                          <i className=" input-icon bi bi-envelope-at-fill"></i>
+                        </div>
+                        <div className="form-group mt-2">
+                          <input
+                            type="password"
+                            id="password"
+                            className="form-style"
+                            placeholder="Password"
+                            value={password} onChange={(e) => setPassword(e.target.value)}
+                         required
+                          />
+                          <i className=" input-icon bi bi-key-fill"></i>
+                        </div>
+                        <button
+                        type="submit"
+                          className="btn1 mt-4 btn btn-outline-info"
+                        >
+                          Register
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      
     );
   }
 

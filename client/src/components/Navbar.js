@@ -4,7 +4,7 @@ import logo from '../assets/logo.png'
 
 function NavBar({ token, logout, user  }) {
   return (
-    <header className="pt-1">
+    <header className="pt-0">
       <div>
       
           <>
@@ -17,10 +17,17 @@ function NavBar({ token, logout, user  }) {
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
           <li className="nav-item">
+
              <Link className="nav-link " to="/">student</Link>
           </li>
           <li className="nav-item">
           <Link className="nav-link " to="/">Admin</Link>
+
+             <Link className="nav-link " to="/messaging">student</Link>
+          </li>
+          <li className="nav-item">
+          <Link className="nav-link " to="/instructor">Admin</Link>
+
           </li>
         </ul>
         <div className="d-flex">

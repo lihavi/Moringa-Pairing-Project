@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 
 function Instructor() {
@@ -54,3 +55,16 @@ function Instructor() {
 }
 
 export default Instructor;
+
+import React from 'react'
+
+function Instructor() {
+  return (
+    <div className="container" >
+      <p>admin</p>
+    </div>
+  )
+}
+
+export default Instructor
+

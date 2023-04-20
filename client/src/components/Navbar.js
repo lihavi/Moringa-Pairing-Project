@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import logo from '../assets/logo.png'
 
 function NavBar({ token, logout, user  }) {
-  
-
   return (
     <header className="pt-0">
       <div>
@@ -19,10 +17,17 @@ function NavBar({ token, logout, user  }) {
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
           <li className="nav-item">
+
+             <Link className="nav-link " to="/">student</Link>
+          </li>
+          <li className="nav-item">
+          <Link className="nav-link " to="/">Admin</Link>
+
              <Link className="nav-link " to="/messaging">student</Link>
           </li>
           <li className="nav-item">
           <Link className="nav-link " to="/instructor">Admin</Link>
+
           </li>
         </ul>
         <div className="d-flex">
@@ -44,6 +49,7 @@ function NavBar({ token, logout, user  }) {
   <div className="nav-item pt-0">
   <Link to="/loginform"><button className="btn btn-outline-primary btn-sm me-2" href="login" type="submit">Login</button></Link> 
   <Link to="/signupform"><button className="btn btn-outline-primary btn-sm  " href="register" type="submit">Signup</button></Link> 
+  <Link to="/pairing"><button className="btn btn-outline-primary btn-sm  " href="pairing" type="submit">Pairing</button></Link> 
   </div>
 </>
         )}

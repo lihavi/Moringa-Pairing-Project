@@ -23,6 +23,21 @@ function App() {
 
   return (
     <Router>
+
+    <NavBar logout={logout} token={token} />
+   <main>
+   <Routes>
+   <Route path="/loginform" element={!token ? <LoginForm setToken={setToken} /> : <Homepage token={token} />} />
+     <Route path="/signupform" element={!token ? <SignupForm setToken={setToken} /> : <Homepage token={token} />} />
+    {/*  <Route path="/pairing" element={!token ? <Pairing setToken={setToken} /> : <Homepage token={token} />} /> */}
+     <Route path="/" element={token ? <Homepage token={token} /> : <LoginForm setToken={setToken} />} />
+   
+   </Routes>
+   </main>
+   <Footer />
+
+ </Router>
+    
       <NavBar logout={logout} token={token} />
       <main>
         <Routes>
@@ -35,6 +50,7 @@ function App() {
       </main>
       <Footer />
     </Router>
+
   );
 }
 

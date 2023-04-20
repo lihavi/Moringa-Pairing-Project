@@ -1,10 +1,28 @@
 class PairsController < ApplicationController
     skip_before_action :verify_authenticity_token
   
+    # def index
+    #   @pairs = Pair.all # Retrieve all pairs from the database
+    #   render json: @pairs
+    # end
+    
     def index
-      @pairs = Pair.all # Retrieve all pairs from the database
-      render json: @pairs
+      @pairs = Pair.select('pairs.*, s1.fullname AS student1_name, s2.fullname AS student2_name')
+                   .joins('INNER JOIN students s1 ON pairs.student1_id = CAST(s1.id AS text)')
+                   .joins('INNER JOIN students s2 ON pairs.student2_id = CAST(s2.id AS text)')
+                   .order(created_at: :desc)
+    
+      # render json: @pairs.as_json(only: [:id, :student1_name, :student2_name, :created_at])
+
+      render json: @pairs.as_json(only: [:id, :student1_name, :student2_name, :week_no, :created_at])
+
+def week_no
+  created_at.strftime('%U')
+end
+
     end
+    
+    
     def new
       @pair = Pair.new
     end

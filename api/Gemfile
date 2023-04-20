@@ -11,11 +11,25 @@ gem "sprockets-rails"
 
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
+gem "faker"
+
 
 gem "rack-cors"
 
+
 gem 'faker'
+
+
+ gem 'faker'
+
+
+<<<<<<< HEAD
+gem "rack-cors"
+
+
  
+=======
+>>>>>>> refs/remotes/origin/kelvin-kimutai
 gem 'jwt'
 
 # Use the Puma web server [https://github.com/puma/puma]

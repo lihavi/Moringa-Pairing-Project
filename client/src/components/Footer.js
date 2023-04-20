@@ -1,12 +1,10 @@
-
-
 function Footer(){
     return(
     <footer className="footer">
       <div className="container">
         <div className="footer__content">
           <div className="footer__logo">
-            <img src="" width="70px" height="70px" align="left" alt="Logo" />
+           <a href=""> <img src="" width="70px" height="70px" align="left" alt="Logo" /></a>
           </div>
           <div className="footer__social-media">
             <a href="#">

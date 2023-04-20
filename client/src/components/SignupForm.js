@@ -12,7 +12,7 @@ function SignupForm({ setToken }) {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post(`http://localhost:3000/users/register`, {
+      const response = await axios.post(`https://moringa-pair.onrender.com/users/register`, {
         fullname,
         email,
         role,

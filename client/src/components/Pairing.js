@@ -7,7 +7,7 @@ function Pairing() {
   const [selectedPair, setSelectedPair] = useState({});
 
   useEffect(() => {
-    axios.get('/api/pairs/current-week')
+    axios.get('https://moringa-pair.onrender.com/api/pairs/current-week')
       .then(response => {
         setPairs(response.data);
       })
@@ -17,7 +17,7 @@ function Pairing() {
   }, []);
 
   const handlePairChange = () => {
-    axios.put(`/api/pairs/${selectedPair.id}`, selectedPair)
+    axios.put(`https://moringa-pair.onrender.com/api/pairs/${selectedPair.id}`, selectedPair)
       .then(response => {
         setPairs(response.data);
         setModalOpen(false);
@@ -46,7 +46,8 @@ function Pairing() {
   };
 
   return (
-    <div>
+    <div className='container text-center pt-5 me-5 admindashboard'>
+      <div className='row'>
       <h1>Pairing Page</h1>
       <table>
         <thead>
@@ -94,6 +95,7 @@ function Pairing() {
           </div>
         </div>
       )}
+      </div>
     </div>
   );
 }

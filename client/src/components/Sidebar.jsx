@@ -27,12 +27,19 @@ function Sidebar({ userRole }) {
                 <span>Dashboard</span>
               </Link>
             )}
+              <a
+              href="/students"
+              className="list-group-item list-group-item-action py-2 ripple"
+            >
+              <i className="fas fa-users fa-fw me-3"></i>
+              <span>Students</span>
+            </a>
             <a
-              href="/"
+              href="/pairing"
               className="list-group-item list-group-item-action py-2 ripple"
             >
               <i className="fas fa-building fa-fw me-3"></i>
-              <span>Partners</span>
+              <span>Pairing</span>
             </a>
             <a
               href="/"
@@ -41,13 +48,7 @@ function Sidebar({ userRole }) {
               <i className="fas fa-calendar fa-fw me-3"></i>
               <span>Calendar</span>
             </a>
-            <a
-              href="/"
-              className="list-group-item list-group-item-action py-2 ripple"
-            >
-              <i className="fas fa-users fa-fw me-3"></i>
-              <span>Users</span>
-            </a>
+          
             <a
               href="/"
               className="list-group-item list-group-item-action py-2 ripple"

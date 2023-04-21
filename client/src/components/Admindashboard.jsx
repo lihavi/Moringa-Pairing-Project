@@ -4,7 +4,7 @@ function Admindashboard() {
   return (
  
    
-      <div className="container text-center pt-5 me-5">
+      <div className="container text-center pt-5 me-5 admindashboard">
   <div className="row align-items-center me-5">
     <div className="col">
      <div className="card" style={{width: "18rem"}}>

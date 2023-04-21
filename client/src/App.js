@@ -12,8 +12,8 @@ import Footer from './components/Footer';
 import './App.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import NavBar from './components/Navbar';
-import Admindashboard from './components/Admindashboard';
 import Sidebar from './components/Sidebar';
+import Admindashboard from './components/Admindashboard';
 
 
 function App() {

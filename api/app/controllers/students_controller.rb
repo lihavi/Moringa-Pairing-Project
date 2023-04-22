@@ -1,13 +1,6 @@
 class StudentsController < ApplicationController
 
-  
-
-    def dashboard
-      # Render student dashboard view
-    end
-
      #GET /students
-     #   get all categories
   def index
     render json: Student.all
   end

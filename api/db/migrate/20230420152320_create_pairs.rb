@@ -1,5 +1,6 @@
 class CreatePairs < ActiveRecord::Migration[7.0]
   def change
+    unless table_exists? :pairs
     create_table :pairs do |t|
       t.string :my_custom_id
       t.string :week_no
@@ -11,4 +12,5 @@ class CreatePairs < ActiveRecord::Migration[7.0]
       t.timestamps
     end
   end
+end
 end

@@ -49,6 +49,20 @@ function Sidebar({ userRole }) {
               <i className="fas fa-calendar fa-fw me-3"></i>
               <span>Calendar</span>
             </a>
+
+            {/* feedback */}
+             {userRole === "admin" && (
+              <Link to="/adminfeedback" className="list-group-item list-group-item-action py-2 ripple">
+                <i className="fas fa-user fa-fw me-3"></i>
+                <span>Feedback</span>
+              </Link>
+             )}
+            {userRole === "student" && (
+              <Link to="/studentfeedback" className="list-group-item list-group-item-action py-2 ripple">
+                <i className="fas fa-user fa-fw me-3"></i>
+                <span>Feedback</span>
+              </Link>
+            )}
           
             <a
               href="/"
@@ -58,13 +72,13 @@ function Sidebar({ userRole }) {
               <span>Sales</span>
             </a>
             
-                        {/* profiles */}
-                        {userRole === "admin" && (
+            {/* profiles */}
+             {userRole === "admin" && (
               <Link to="/adminprofile" className="list-group-item list-group-item-action py-2 ripple">
                 <i className="fas fa-user fa-fw me-3"></i>
                 <span>Profile</span>
               </Link>
-            )}
+             )}
             {userRole === "student" && (
               <Link to="/studentprofile" className="list-group-item list-group-item-action py-2 ripple">
                 <i className="fas fa-user fa-fw me-3"></i>

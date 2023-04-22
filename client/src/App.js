@@ -18,6 +18,8 @@ import Studentdashboard from './components/Studentdashboard';
 import Adminprofile from './components/profile/Adminprofile';
 import Studentprofile from './components/profile/Studentprofile';
 import axios from 'axios';
+import Adminfeedback from './components/feedback/Adminfeedback';
+import Studentfeedback from './components/feedback/Studentfeedback';
 
 
 function App() {
@@ -84,6 +86,21 @@ function App() {
               <Adminprofile token={token} />
               </div>} />
           )}
+
+      {/* feedbacks */}
+          {userRole === 'student' && (
+      <Route path="/studentfeedback" element={ <div className="dashboard-container">
+              <Sidebar userRole={userRole}/>
+              <Studentfeedback token={token}/>
+              </div>} />
+          )}
+                    {userRole === 'admin' && (
+      <Route path="/adminfeedback" element={ <div className="dashboard-container">
+              <Sidebar userRole={userRole}/>
+              <Adminfeedback token={token} />
+              </div>} />
+          )}
+
       <Route path="/pairing" element={ <div className="dashboard-container">
               <Sidebar userRole={userRole}/>
               <Pairing />
@@ -97,50 +114,6 @@ function App() {
 
     <Footer />
   </Router>
-    // <Router>
-    
-    //   <NavBar logout={logout} token={token} />
-   
-    //     <Routes>
-    //       <Route
-    //         path="/loginform"
-    //         element={!token ? <LoginForm setToken={setToken} setUserRole={setUserRole} /> : <Homepage token={token} />}
-    //       />
-    //       <Route
-    //         path="/signupform"
-    //         element={!token ? <SignupForm setToken={setToken} setUserRole={setUserRole} /> : <Homepage token={token} />}
-    //       />
-    //        <Route
-    //         path="/pairing"
-    //         element={token ? (<Pairing setToken={setToken} setUserRole={setUserRole} />) : (<Homepage token={token} />)}
-    //       />
-    //       <Route
-    //         path="/"
-    //         element={
-    //           token ? (
-    //             <Homepage token={token} />
-    //           ) : (
-    //             <Homepage setToken={setToken} setUserRole={setUserRole} />
-    //           )
-    //         }
-    //       />
-    //       {userRole === 'admin' && (
-    //         <Route path="/admindashboard" element={ <div className="dashboard-container">
-    //         <Sidebar userRole={userRole}/>
-    //         <Admindashboard />
-    //       </div>} />
-    //       )}
-    //       {userRole === 'student' && (
-    //         <Route path="/studentdashboard" element={ <div className="dashboard-container">
-    //           <Sidebar userRole={userRole}/>
-    //           <Messaging />
-    //           </div>} />
-    //       )}
-
-    //     </Routes>
-      
-    //   <Footer />
-    // </Router>
 
   );
 }

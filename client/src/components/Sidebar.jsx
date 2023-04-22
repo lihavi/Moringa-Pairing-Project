@@ -27,6 +27,7 @@ function Sidebar({ userRole }) {
                 <span>Dashboard</span>
               </Link>
             )}
+
               <a
               href="/students"
               className="list-group-item list-group-item-action py-2 ripple"
@@ -56,15 +57,20 @@ function Sidebar({ userRole }) {
               <i className="fas fa-money-bill fa-fw me-3"></i>
               <span>Sales</span>
             </a>
-            <i className="profile">
-              <a
-                href="/"
-                className="list-group-item list-group-item-action py-2 ripple "
-              >
+            
+                        {/* profiles */}
+                        {userRole === "admin" && (
+              <Link to="/adminprofile" className="list-group-item list-group-item-action py-2 ripple">
                 <i className="fas fa-user fa-fw me-3"></i>
-                <span>PROFILE</span>
-              </a>
-            </i>
+                <span>Profile</span>
+              </Link>
+            )}
+            {userRole === "student" && (
+              <Link to="/studentprofile" className="list-group-item list-group-item-action py-2 ripple">
+                <i className="fas fa-user fa-fw me-3"></i>
+                <span>Profile</span>
+              </Link>
+            )}
           </div>
         </div>
       </nav>

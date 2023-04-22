@@ -1,27 +1,7 @@
-import axios from "axios";
-import { useState } from "react";
 import logo from '../assets/logo.png'
 import '../css/loginform.css'
 
-function LoginForm({ setToken, setUserRole }) {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    try {
-      const response = await axios.post(`http://localhost:3000/users/login`, {
-        email,
-        password,
-      });
-      localStorage.setItem("token", response.data.token);
-      localStorage.setItem("userRole", response.data.user.role); // Store the role of the logged-in user
-      setToken(response.data.token);
-      setUserRole(response.data.user.role); // Set the role of the logged-in user
-      console.log(response.data.user);
-    } catch (error) {
-      console.error(error);
-    }
-  };
+function LoginForm({ setEmail, setPassword, handleSubmit, email, password }) {
 
   return (
 

@@ -21,27 +21,24 @@ function Students({token}) {
         fetchStudents();
       }, []);
   return (
-    <div className='container text-center pt-5 me-5 admindashboard'>
+    <div className='container text-center pt-2 admindashboard'>
         <h4><u>STUDENTS LIST</u></h4>
-        <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Fullname</th>
-      <th scope="col">grade</th>
-    </tr>
-  </thead>
-  <tbody>
-  {students.map((student) => (
-    <tr>
-      <th scope="row">{student.id}</th>
-      <td>{student.fullname}</td>
-      <td>{student.grade}</td>
-    </tr>
-  ))}
-   
-  </tbody>
-</table>
+        <div className="row align-items-center ">
+
+        {students.map((student) => ( 
+    <div className="col-3 pt-1">
+     <div className="card slist" style={{width: "15.4rem"}}>
+     <p className="total mb-1"><b>{student.fullname}</b></p>
+  <div className="card-body pt-0 text-start ms-2">
+   <p className="total mb-0"><b>Student id:</b> {student.id}  </p>
+   <p className="total mb-0"><b>Grade:</b> {student.grade}  </p>
+   <p className="total mb-0"><b>Group:</b> {student.id}  </p>
+  </div>
+</div>
+    </div>
+        ))}
+
+  </div>
       
     </div>
   )

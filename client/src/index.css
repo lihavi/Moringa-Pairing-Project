@@ -16,6 +16,8 @@ code {
 }
 header {
   border-bottom: solid black 1px;
+  overflow: hidden;
+
 }
 main {
   padding-top: 0px;
@@ -311,7 +313,7 @@ body {
   }
   .navbar {
     height: 50px;
-    border-radius: 8px;
+    border-radius: 0px;
     -webkit-transition: all 200ms linear;
     transition: all 200ms linear;
     box-shadow: 0 4px 8px 0 rgba(21,21,21,.2);

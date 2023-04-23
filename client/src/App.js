@@ -58,7 +58,7 @@ function App() {
   return (
     <Router>
     <NavBar logout={logout} token={token} />
-
+<div className='main'>
     <Routes>
       <Route path="/loginform" element={!token ? <LoginForm setToken={setToken} setUserRole={setUserRole} handleSubmit={handleSubmit} setEmail={setEmail} setPassword={setPassword} email={email} password={password} /> : <Navigate to={userRole === 'admin' ? '/admindashboard' : '/studentdashboard'} />} />
       <Route path="/signupform" element={!token ? <SignupForm setToken={setToken} setUserRole={setUserRole} /> : <Navigate to={userRole === 'admin' ? '/admindashboard' : '/studentdashboard'} />} />
@@ -101,6 +101,20 @@ function App() {
               </div>} />
           )}
 
+      {/* messages */}
+          {userRole === 'student' && (
+      <Route path="/studentmessages" element={ <div className="dashboard-container">
+              <Sidebar userRole={userRole}/>
+              <Messaging token={token}/>
+              </div>} />
+          )}
+                    {userRole === 'admin' && (
+      <Route path="/adminmessages" element={ <div className="dashboard-container">
+              <Sidebar userRole={userRole}/>
+              <Messaging token={token} />
+              </div>} />
+          )}
+
       <Route path="/pairing" element={ <div className="dashboard-container">
               <Sidebar userRole={userRole}/>
               <Pairing />
@@ -111,7 +125,7 @@ function App() {
               </div>} />
 
     </Routes>
-
+    </div>
     <Footer />
   </Router>
 

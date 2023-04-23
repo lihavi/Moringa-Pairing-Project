@@ -14,8 +14,11 @@ gem "pg", "~> 1.1"
 
 gem "rack-cors"
 
+<<<<<<< Updated upstream
 gem 'faker'
  
+=======
+>>>>>>> Stashed changes
 gem 'jwt'
 
 # Use the Puma web server [https://github.com/puma/puma]

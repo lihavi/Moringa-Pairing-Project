@@ -16,6 +16,10 @@ gem "rack-cors"
 gem 'diff-lcs', '~> 1.5'
 
 
+
+gem 'faker'
+ 
+
 gem 'jwt'
 
 # Use the Puma web server [https://github.com/puma/puma]

@@ -26,7 +26,7 @@ function Students({token}) {
         <div className="row align-items-center ">
 
         {students.map((student) => ( 
-    <div className="col-3 pt-1">
+    <div className="col-3 pt-1" key={student.id}>
      <div className="card slist" style={{width: "15.4rem"}}>
      <p className="total mb-1"><b>{student.fullname}</b></p>
   <div className="card-body pt-0 text-start ms-2">

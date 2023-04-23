@@ -10,7 +10,7 @@ function Messaging() {
       </h3>
 
       <div className="card cardp">
-        <label for="formFile" className="form-label">
+        <label htmlFor="formFile" className="form-label">
           Email:
         </label>
         <div className="form-group col-6">
@@ -18,7 +18,7 @@ function Messaging() {
           <i className=" input-icon bi bi-envelope"></i>
         </div>
 
-        <label for="formFile" className="form-label">
+        <label htmlFor="formFile" className="form-label">
           Email:
         </label>
         <div className="form-group col-6">

@@ -4,10 +4,8 @@ import logo from '../assets/logo.png'
 
 function NavBar({ token, logout, user  }) {
   return (
-    <header className="pt-0">
-      <div>
-      
-          <>
+   
+      <div> 
       <nav className="navbar navbar-expand-sm ">
     <div className="container-fluid">
       <Link className="navbar-brand" to="/"><img className="logo" src={logo} alt="moringa logo" /> </Link>
@@ -29,7 +27,7 @@ function NavBar({ token, logout, user  }) {
         <>
          <ul className="nav nav-pills nav-fill">
   <li className="nav-item">
-  {user && (
+  {user && (  
     <a className="nav-link me-3" href="#/"> {user} </a>
   )}
   </li>
@@ -52,10 +50,9 @@ function NavBar({ token, logout, user  }) {
       </div>
     </div>
   </nav>
-  </>
 
    </div>
-    </header>
+  
      
   );
 }

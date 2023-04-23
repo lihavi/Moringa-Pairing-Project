@@ -9,7 +9,7 @@ function Sidebar({ userRole }) {
           <div className="list-group list-group-flush mx-0 mt-4">
             {userRole === "admin" && (
               <a
-                href="/"
+                href="/admindashboard"
                 className="list-group-item list-group-item-action py-2 ripple"
                 aria-current="true"
               >
@@ -20,7 +20,7 @@ function Sidebar({ userRole }) {
 
             {userRole === "student" && (
               <a
-                href="/"
+                href="/studentdashboard"
                 className="list-group-item list-group-item-action py-2 ripple"
                 aria-current="true"
               >

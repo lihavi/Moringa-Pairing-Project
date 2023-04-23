@@ -1,18 +1,17 @@
 class PairsController < ApplicationController
     skip_before_action :verify_authenticity_token
   
-  
     def index
-      @pairs = Pair.all
+      @pairs = Pair.all # Retrieve all pairs from the database
+      render json: @pairs
     end
-  
     def new
       @pair = Pair.new
     end
-
-    
+  
     def create
       @pair = Pair.new(pair_params)
+    
       if @pair.save
         head :no_content
       else
@@ -20,8 +19,7 @@ class PairsController < ApplicationController
       end
     end
     
-    
-    
+  
   
     def edit
       @pair = Pair.find(params[:id])

@@ -1,12 +1,18 @@
 class UsersController < ApplicationController
     skip_before_action :authorize_request, only: [:create, :reset_password, :update_password]
+
+    def show
+      user = User.find_by(id: @current_user.id)
+      render json: user
+    end 
+  
     
     def create
       user = User.new(user_params)
-      user.role = params[:role] #
+      user.role = params[:role] 
       if user.save
         token = JWT.encode({ user_id: user.id, role: user.role }, Rails.application.secrets.secret_key_base)
-        user.role = params[:role] #
+        user.role = params[:role] 
         render json: { user: user, token: token }, status: :created
       else
         render json: { errors: user.errors.full_messages }, status: :unprocessable_entity
@@ -39,6 +45,7 @@ class UsersController < ApplicationController
     def user_params
       params.permit(:fullname, :email, :password, :role, :password_confirmation)
     end
+
   end
   
   

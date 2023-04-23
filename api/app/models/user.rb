@@ -1,6 +1,8 @@
 class User < ApplicationRecord
     has_secure_password
     validates :email, presence: true, uniqueness: true
+    validates :fullname, presence: true
+    validates :role, presence: true
   
     enum role: { student: 0, admin: 1}
   
@@ -21,5 +23,5 @@ class User < ApplicationRecord
     def reset_password_token_valid?
       reset_password_token.present? && reset_password_token_expires_at.present? && reset_password_token_expires_at > Time.now
     end
-  end
+end
   

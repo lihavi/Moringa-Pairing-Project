@@ -5,7 +5,8 @@ import SignupForm from './components/SignupForm';
 import LoginForm from './components/LoginForm';
 import Students from './components/Students';
 import Messaging from './components/Messaging';
-import Pairing from './components/Pairing1';
+// import Pairing from './components/Pairing';
+import Pairing from './components/pairing';
 import Feedback from './components/Feedback';
 import Instructor from './components/Instructor';
 import PairList from './components/Pairlist';
@@ -146,6 +147,9 @@ function App() {
               <Sidebar userRole={userRole}/>
               <Pairing token={token} />
               </div>} />
+
+              <Route path="/" element={<Homepage/>} />
+
 
     </Routes>
     </div>

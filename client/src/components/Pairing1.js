@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-function Pairing() {
+function Pairing1() {
   const [pairs, setPairs] = useState([]);
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedPair, setSelectedPair] = useState({});
@@ -100,4 +100,4 @@ function Pairing() {
   );
 }
 
-export default Pairing;
+export default Pairing1;

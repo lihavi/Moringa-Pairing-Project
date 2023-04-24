@@ -1,7 +1,11 @@
-import axios from "axios";
 import {useState} from "react";
+import logo from '../assets/logo.png'
+import '../css/loginform.css'
+import axios from "axios";
+
 
 function SignupForm({ setToken }) {
+  const axios = require('axios');
   const [fullname, setFullname] = useState('');
   const [email, setEmail] = useState('');
   const [role, setRole] = useState('');
@@ -10,7 +14,7 @@ function SignupForm({ setToken }) {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post(`http://localhost:3000/users/register`, {
+      const response = await axios.post(`https://moringa-pair.onrender.com/users/register`, {
         fullname,
         email,
         role,
@@ -38,7 +42,9 @@ function SignupForm({ setToken }) {
                   <div className="card-front">
                     <div className="center-wrap">
                       <form className="section text-center pt-0" onSubmit={handleSubmit}>
-                        <h4 className="mb-3 pb-3">Sign Up</h4>
+                        <h4 className="mb-2 pb-0">Sign Up</h4>
+
+                        <img className="mb-2 img" src={logo} alt="logoin" />
   
                         <div className="form-group mt-2">
                           <input
@@ -69,7 +75,7 @@ function SignupForm({ setToken }) {
                             placeholder="role"
                             value={role} onChange={(e) => setRole(e.target.value)} required
                           />
-                          <i className=" input-icon bi bi-envelope-at-fill"></i>
+                         <i className="input-icon bi bi-person-fill-add"></i>
                         </div>
                         <div className="form-group mt-2">
                           <input
@@ -88,6 +94,7 @@ function SignupForm({ setToken }) {
                         >
                           Register
                         </button>
+                        <p>Already have an account? <a href="/">Login</a> </p>
                       </form>
                     </div>
                   </div>

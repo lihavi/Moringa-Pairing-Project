@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_19_060835) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_20_152320) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -21,36 +21,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_19_060835) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  create_table "instructors", force: :cascade do |t|
-    t.integer "user_id"
-    t.string "fullname"
-    t.string "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "messages", force: :cascade do |t|
-    t.integer "sender_user_id"
-    t.integer "recipient_user_id"
-    t.string "content"
-    t.integer "pair_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-
-
-ActiveRecord::Schema[7.0].define(version: 2023_04_18_122228) do
-ActiveRecord::Schema[7.0].define(version: 2023_04_18_122227) do
-
-
-ActiveRecord::Schema[7.0].define(version: 2023_04_18_122228) do
-
-
-
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
 
   create_table "pairs", force: :cascade do |t|
     t.string "my_custom_id"

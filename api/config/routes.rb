@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
+  mount Rswag::Ui::Engine => '/api-docs'
+  mount Rswag::Api::Engine => '/api-docs'
   # # For student
   # root to: 'students#dashboard', constraints: lambda { |request| request.env['warden'].user&.student? }
   resources :students, only: [:index, :show, :update, :create, :destroy]
-
   # user login/register
   post "/users/login", to: "authentication#login"
   post "/users/register", to: "users#create"
-  get "/users", to: "users#index"
+  get '/user/me', to: 'users#show'
 #admin
   post "data/admin", to: "admin#create"
 #student
@@ -42,21 +43,21 @@ Rails.application.routes.draw do
   put '/message/:id', to: 'messages#update'
   delete '/message/:id', to: 'messages#destroy'
 
-  post '/pairs', to: 'pairs#create'
-  get '/pairs/', to: 'pairs#index' 
 
-
+# get students
+get '/students', to: "students#index"
 
  #randomly pair students
   get '/pair_students', to: 'pairs#pair_students'
-
-  # get '/pairs', to: 'pairs#index'
   post '/pairs', to: 'pairs#create'
   #get all pairs
   get '/pairs', to: 'pairs#index' 
-  #delete all pairs
+  
+#deletes a pair by id
+  delete '/pairs/:id', to: 'pairs#destroy'
 
-
+#delete all pairs
+delete '/pairs', to: 'pairs#destroy_all'
 
 
  

@@ -1,34 +1,39 @@
 class PairsController < ApplicationController
     skip_before_action :verify_authenticity_token
-  
+
+    
     def index
-      @pairs = Pair.all # Retrieve all pairs from the database
-      render json: @pairs
+      @pairs = Pair.select('pairs.*, s1.fullname AS student1_name, s2.fullname AS student2_name')
+                   .joins('INNER JOIN students s1 ON pairs.student1_id = CAST(s1.id AS text)')
+                   .joins('INNER JOIN students s2 ON pairs.student2_id = CAST(s2.id AS text)')
+                   .order(created_at: :desc)
+    
+      # render json: @pairs.as_json(only: [:id, :student1_name, :student2_name, :created_at])
+
+      render json: @pairs.as_json(only: [:id, :student1_name, :student2_name, :week_no, :created_at])
+
+def week_no
+  created_at.strftime('%U')
+end
+
     end
+    
+    
     def new
       @pair = Pair.new
     end
   
-
-
     def create
       @pair = Pair.new(pair_params)
     
       if @pair.save
-
         head :no_content
       else
         render json: { errors: @pair.errors.full_messages }, status: :unprocessable_entity
-
-        render json: @pair, status: :created
-      else
-        render json: @pair.errors, status: :unprocessable_entity
-
       end
     end
     
-    
-
+  
   
     def edit
       @pair = Pair.find(params[:id])
@@ -42,12 +47,24 @@ class PairsController < ApplicationController
         render :edit
       end
     end
-  
+    #delete one pair
     def destroy
       @pair = Pair.find(params[:id])
-      @pair.destroy
-      redirect_to pairs_path
+      puts "Deleting pair with ID: #{params[:id]}"
+      puts "Pair record before deletion: #{@pair}"
+      
+      if @pair.destroy
+        puts "Pair record successfully deleted"
+        render json: { message: "Pair was successfully deleted." }, status: :ok
+      else
+        puts "Error deleting pair record"
+        render json: { errors: "Failed to delete pair." }, status: :unprocessable_entity
+      end
     end
+    
+    
+    
+    
   
     def pair_students
       # Get the latest pair records created in the current week
@@ -82,6 +99,15 @@ class PairsController < ApplicationController
         redirect_to pairs_path, notice: "Pairs were already created this week."
       end
     end
+    def destroy_all
+      if Pair.destroy_all
+        redirect_to pairs_path, notice: "All pairs were successfully deleted."
+      else
+        redirect_to pairs_path, alert: "Failed to delete all pairs."
+      end
+    end
+    
+    
   
     private
   

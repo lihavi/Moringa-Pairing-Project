@@ -8,6 +8,7 @@ import Messaging from './components/Messaging';
 import Pairing from './components/Pairing';
 import Feedback from './components/Feedback';
 import Instructor from './components/Instructor';
+import PairList from './components/Pairlist';
 import Footer from './components/Footer';
 import './App.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
@@ -31,8 +32,10 @@ function App() {
     <Router>
     
       <NavBar logout={logout} token={token} />
+      
    
         <Routes>
+          {/* <Route path="/" component={PairList} /> */}
           <Route
             path="/loginform"
             element={!token ? <LoginForm setToken={setToken} setUserRole={setUserRole} /> : <Homepage token={token} />}
@@ -45,9 +48,9 @@ function App() {
             path="/"
             element={
               token ? (
-                <Homepage token={token} />
+                <Pairing token={token} />
               ) : (
-                <Homepage setToken={setToken} setUserRole={setUserRole} />
+                <Pairing setToken={setToken} setUserRole={setUserRole} />
               )
             }
           />

@@ -59,17 +59,12 @@ function App() {
 
     <NavBar logout={logout} token={token} />
 
-    <Routes>
-      <Route path="/loginform" element={!token ? <LoginForm setToken={setToken} setUserRole={setUserRole} handleSubmit={handleSubmit} setEmail={setEmail} setPassword={setPassword} email={email} password={password} /> : <Navigate to={userRole === 'admin' ? '/admindashboard' : '/studentdashboard'} />} />
-      <Route path="/signupform" element={!token ? <SignupForm setToken={setToken} setUserRole={setUserRole} /> : <Navigate to={userRole === 'admin' ? '/admindashboard' : '/studentdashboard'} />} />
-            {userRole === 'admin' && (
-      <Route path="/admindashboard" element={ <div className="dashboard-container">
-
+  
     
-      <NavBar logout={logout} token={token} />
       
    
         <Routes>
+          
           {/* <Route path="/" component={PairList} /> */}
           <Route
             path="/loginform"
@@ -127,50 +122,7 @@ function App() {
 
     <Footer />
   </Router>
-    // <Router>
-    
-    //   <NavBar logout={logout} token={token} />
-   
-    //     <Routes>
-    //       <Route
-    //         path="/loginform"
-    //         element={!token ? <LoginForm setToken={setToken} setUserRole={setUserRole} /> : <Homepage token={token} />}
-    //       />
-    //       <Route
-    //         path="/signupform"
-    //         element={!token ? <SignupForm setToken={setToken} setUserRole={setUserRole} /> : <Homepage token={token} />}
-    //       />
-    //        <Route
-    //         path="/pairing"
-    //         element={token ? (<Pairing setToken={setToken} setUserRole={setUserRole} />) : (<Homepage token={token} />)}
-    //       />
-    //       <Route
-    //         path="/"
-    //         element={
-    //           token ? (
-    //             <Homepage token={token} />
-    //           ) : (
-    //             <Homepage setToken={setToken} setUserRole={setUserRole} />
-    //           )
-    //         }
-    //       />
-    //       {userRole === 'admin' && (
-    //         <Route path="/admindashboard" element={ <div className="dashboard-container">
-    //         <Sidebar userRole={userRole}/>
-    //         <Admindashboard />
-    //       </div>} />
-    //       )}
-    //       {userRole === 'student' && (
-    //         <Route path="/studentdashboard" element={ <div className="dashboard-container">
-    //           <Sidebar userRole={userRole}/>
-    //           <Messaging />
-    //           </div>} />
-    //       )}
 
-    //     </Routes>
-      
-    //   <Footer />
-    // </Router>
 
   );
 }

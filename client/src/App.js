@@ -59,14 +59,8 @@ function App() {
 
     <NavBar logout={logout} token={token} />
 
-    <Routes>
-      <Route path="/loginform" element={!token ? <LoginForm setToken={setToken} setUserRole={setUserRole} handleSubmit={handleSubmit} setEmail={setEmail} setPassword={setPassword} email={email} password={password} /> : <Navigate to={userRole === 'admin' ? '/admindashboard' : '/studentdashboard'} />} />
-      <Route path="/signupform" element={!token ? <SignupForm setToken={setToken} setUserRole={setUserRole} /> : <Navigate to={userRole === 'admin' ? '/admindashboard' : '/studentdashboard'} />} />
-            {userRole === 'admin' && (
-      <Route path="/admindashboard" element={ <div className="dashboard-container">
-
-    
-      <NavBar logout={logout} token={token} />
+  
+ 
       
    
         <Routes>
@@ -83,9 +77,9 @@ function App() {
             path="/"
             element={
               token ? (
-                <Pairing token={token} />
+                <Messaging token={token} />
               ) : (
-                <Pairing setToken={setToken} setUserRole={setUserRole} />
+                <Messaging setToken={setToken} setUserRole={setUserRole} />
               )
             }
           />
@@ -123,10 +117,11 @@ function App() {
               <Students token={token} />
               </div>} />
 
-    </Routes>
+      </Routes>
 
-    <Footer />
-  </Router>
+        <Footer />
+    </Router>
+  
     // <Router>
     
     //   <NavBar logout={logout} token={token} />

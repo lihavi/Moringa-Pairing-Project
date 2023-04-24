@@ -1,10 +1,6 @@
 class PairsController < ApplicationController
     skip_before_action :verify_authenticity_token
-  
-    # def index
-    #   @pairs = Pair.all # Retrieve all pairs from the database
-    #   render json: @pairs
-    # end
+
     
     def index
       @pairs = Pair.select('pairs.*, s1.fullname AS student1_name, s2.fullname AS student2_name')
@@ -51,12 +47,24 @@ end
         render :edit
       end
     end
-  
+    #delete one pair
     def destroy
       @pair = Pair.find(params[:id])
-      @pair.destroy
-      redirect_to pairs_path
+      puts "Deleting pair with ID: #{params[:id]}"
+      puts "Pair record before deletion: #{@pair}"
+      
+      if @pair.destroy
+        puts "Pair record successfully deleted"
+        render json: { message: "Pair was successfully deleted." }, status: :ok
+      else
+        puts "Error deleting pair record"
+        render json: { errors: "Failed to delete pair." }, status: :unprocessable_entity
+      end
     end
+    
+    
+    
+    
   
     def pair_students
       # Get the latest pair records created in the current week
@@ -91,6 +99,15 @@ end
         redirect_to pairs_path, notice: "Pairs were already created this week."
       end
     end
+    def destroy_all
+      if Pair.destroy_all
+        redirect_to pairs_path, notice: "All pairs were successfully deleted."
+      else
+        redirect_to pairs_path, alert: "Failed to delete all pairs."
+      end
+    end
+    
+    
   
     private
   

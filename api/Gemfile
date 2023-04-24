@@ -23,13 +23,10 @@ gem 'faker'
  gem 'faker'
 
 
-<<<<<<< HEAD
 gem "rack-cors"
 
 
  
-=======
->>>>>>> refs/remotes/origin/kelvin-kimutai
 gem 'jwt'
 
 # Use the Puma web server [https://github.com/puma/puma]

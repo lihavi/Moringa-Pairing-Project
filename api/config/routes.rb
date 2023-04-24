@@ -42,21 +42,20 @@ Rails.application.routes.draw do
   put '/message/:id', to: 'messages#update'
   delete '/message/:id', to: 'messages#destroy'
 
-  post '/pairs', to: 'pairs#create'
-  get '/pairs/', to: 'pairs#index' 
 
 
 
  #randomly pair students
   get '/pair_students', to: 'pairs#pair_students'
-
-  # get '/pairs', to: 'pairs#index'
   post '/pairs', to: 'pairs#create'
   #get all pairs
   get '/pairs', to: 'pairs#index' 
-  #delete all pairs
+  
+#deletes a pair by id
+  delete '/pairs/:id', to: 'pairs#destroy'
 
-
+#delete all pairs
+delete '/pairs', to: 'pairs#destroy_all'
 
 
  

@@ -74,6 +74,8 @@ function App() {
               <Studentdashboard />
               </div>} />
           )}
+
+          {/* profile */}
           {userRole === 'student' && (
       <Route path="/studentprofile" element={ <div className="dashboard-container">
               <Sidebar userRole={userRole}/>
@@ -101,6 +103,20 @@ function App() {
               </div>} />
           )}
 
+      {/* students */}
+          {userRole === 'student' && (
+      <Route path="/students" element={ <div className="dashboard-container">
+              <Sidebar userRole={userRole}/>
+              <Students token={token}/>
+              </div>} />
+          )}
+                    {userRole === 'admin' && (
+      <Route path="/students" element={ <div className="dashboard-container">
+              <Sidebar userRole={userRole}/>
+              <Students token={token} />
+              </div>} />
+          )}
+
       {/* messages */}
           {userRole === 'student' && (
       <Route path="/studentmessages" element={ <div className="dashboard-container">
@@ -115,13 +131,14 @@ function App() {
               </div>} />
           )}
 
+          {/* pairing */}
       <Route path="/pairing" element={ <div className="dashboard-container">
               <Sidebar userRole={userRole}/>
-              <Pairing />
+              <Pairing token={token} />
               </div>} />
-      <Route path="/students" element={ <div className="dashboard-container">
+      <Route path="/pairing" element={ <div className="dashboard-container">
               <Sidebar userRole={userRole}/>
-              <Students token={token} />
+              <Pairing token={token} />
               </div>} />
 
     </Routes>

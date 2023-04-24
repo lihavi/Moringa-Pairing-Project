@@ -55,13 +55,26 @@ function Sidebar({ userRole }) {
               <i className="fas fa-users fa-fw me-3"></i>
               <span>Students</span>
             </a>
-            <a
-              href="/pairing"
-              className="list-group-item list-group-item-action py-2 ripple"
-            >
-              <i className="fas fa-building fa-fw me-3"></i>
-              <span>Pairing</span>
-            </a>
+            {/* pairlist */}
+            {userRole === "admin" && (
+              <Link
+                to="/pairing"
+                className="list-group-item list-group-item-action py-2 ripple"
+              >
+                <i className="fas fa-user fa-fw me-3"></i>
+                <span>Pairing</span>
+              </Link>
+            )}
+             {userRole === "student" && (
+              <Link
+                to="/pairing"
+                className="list-group-item list-group-item-action py-2 ripple"
+              >
+                <i className="fas fa-user fa-fw me-3"></i>
+                <span>Pairlist</span>
+              </Link>
+            )}
+
 
             {/* feedback */}
             {userRole === "admin" && (

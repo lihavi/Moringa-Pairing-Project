@@ -22,6 +22,23 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_20_152320) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "instructors", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "fullname"
+    t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.integer "sender_user_id"
+    t.integer "recipient_user_id"
+    t.string "content"
+    t.integer "pair_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "pairs", force: :cascade do |t|
     t.string "my_custom_id"
     t.string "week_no"

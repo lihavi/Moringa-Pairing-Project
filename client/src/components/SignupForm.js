@@ -1,9 +1,11 @@
-import axios from "axios";
 import {useState} from "react";
 import logo from '../assets/logo.png'
 import '../css/loginform.css'
+import axios from "axios";
+
 
 function SignupForm({ setToken }) {
+  const axios = require('axios');
   const [fullname, setFullname] = useState('');
   const [email, setEmail] = useState('');
   const [role, setRole] = useState('');
@@ -12,7 +14,7 @@ function SignupForm({ setToken }) {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post(`http://localhost:3000/users/register`, {
+      const response = await axios.post(`https://moringa-pair.onrender.com/users/register`, {
         fullname,
         email,
         role,

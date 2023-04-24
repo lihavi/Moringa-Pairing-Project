@@ -1,3 +1,4 @@
+
 require 'faker'
 
 # require 'faker'
@@ -127,6 +128,7 @@ end
     user: User.order("RANDOM()").first
   )
 end
+
 
 
 

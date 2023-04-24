@@ -1,5 +1,6 @@
 class CreateStudents < ActiveRecord::Migration[7.0]
   def change
+    unless table_exists? :students
     create_table :students do |t|
       t.string :fullname
       t.float :grade
@@ -8,4 +9,5 @@ class CreateStudents < ActiveRecord::Migration[7.0]
       t.timestamps
     end
   end
+end
 end

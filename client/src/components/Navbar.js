@@ -22,9 +22,7 @@ function NavBar({ token, logout, user  }) {
           <li className="nav-item">
           <Link className="nav-link " to="/admindashboard">Admin</Link> 
           </li>
-          <li className="nav-item">
-          <Link className="nav-link " to="/pairing">Pairing</Link> 
-          </li>
+        
         </ul>
         <div className="d-flex">
         {token ?(

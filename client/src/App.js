@@ -5,9 +5,10 @@ import SignupForm from './components/SignupForm';
 import LoginForm from './components/LoginForm';
 import Students from './components/Students';
 import Messaging from './components/Messaging';
-import Pairing from './components/Pairing';
+import Pairing from './components/Pairing1';
 import Feedback from './components/Feedback';
 import Instructor from './components/Instructor';
+import PairList from './components/Pairlist';
 import Footer from './components/Footer';
 import './App.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
@@ -57,13 +58,46 @@ function App() {
 
   return (
     <Router>
+
     <NavBar logout={logout} token={token} />
+
+
+  
+    
+      
+   
+        <Routes>
+          
+          {/* <Route path="/" component={PairList} /> */}
+          <Route
+            path="/loginform"
+            element={!token ? <LoginForm setToken={setToken} setUserRole={setUserRole} /> : <Homepage token={token} />}
+          />
+          <Route
+            path="/signupform"
+            element={!token ? <SignupForm setToken={setToken} setUserRole={setUserRole} /> : <Homepage token={token} />}
+          />
+          <Route
+            path="/"
+            element={
+              token ? (
+                <Pairing token={token} />
+              ) : (
+                <Pairing setToken={setToken} setUserRole={setUserRole} />
+              )
+            }
+          />
+          {userRole === 'admin' && (
+            <Route path="/admindashboard" element={ <div className="dashboard-container">
+
+
 <div className='conMai pt-5'>
     <Routes>
       <Route path="/loginform" element={!token ? <LoginForm setToken={setToken} setUserRole={setUserRole} handleSubmit={handleSubmit} setEmail={setEmail} setPassword={setPassword} email={email} password={password} /> : <Navigate to={userRole === 'admin' ? '/admindashboard' : '/studentdashboard'} />} />
       <Route path="/signupform" element={!token ? <SignupForm setToken={setToken} setUserRole={setUserRole} /> : <Navigate to={userRole === 'admin' ? '/admindashboard' : '/studentdashboard'} />} />
             {userRole === 'admin' && (
       <Route path="/admindashboard" element={ <div className="dashboard-container">
+
             <Sidebar userRole={userRole}/>
             <Admindashboard />
           </div>} />

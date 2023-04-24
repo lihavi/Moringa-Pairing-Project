@@ -35,7 +35,7 @@ const Adminprofile = ({token}) => {
           </div>
         </div>
         <div className="mt-5 text-center">
-          <h4 className="mb-0">{user.fullname}</h4>
+          <h4 className="mb-0">Name: {user.fullname}</h4>
           <div className="d-flex justify-content-between align-items-center mt-4 ms-5 px-4">
             <div className="stats">
               <h6 className="mb-0">Role</h6>

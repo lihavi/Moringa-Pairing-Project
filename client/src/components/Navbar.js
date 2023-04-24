@@ -1,8 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import logo from '../assets/logo.png'
 
-function NavBar({ token, logout, user  }) {
+function NavBar({ token, logout }) {
+
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    fetch('http://localhost:3000/user/me', {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
+      .then(response => response.json())
+      .then(data => {
+        setUser(data);
+        console.log(data);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  }, [token]);
+
   return (
    
       <div> 
@@ -26,9 +45,9 @@ function NavBar({ token, logout, user  }) {
         {token ?(
         <>
          <ul className="nav nav-pills nav-fill">
-  <li className="nav-item">
+  <li className="nav-item ">
   {user && (  
-    <a className="nav-link me-3" href="#/"> {user} </a>
+    <h className="nav-link me-3" href="#/" style={{color: "black"}}> {user.fullname} </h>
   )}
   </li>
   <li className="nav-item pt-1">

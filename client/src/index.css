@@ -23,6 +23,10 @@ main {
   padding-top: 0px;
 }
 
+.username {
+  color: #2661d8;
+}
+
 
 body {
     margin: 0 auto;

@@ -2,11 +2,10 @@ Rails.application.routes.draw do
   # # For student
   # root to: 'students#dashboard', constraints: lambda { |request| request.env['warden'].user&.student? }
   resources :students, only: [:index, :show, :update, :create, :destroy]
-
   # user login/register
   post "/users/login", to: "authentication#login"
   post "/users/register", to: "users#create"
-  get '/users/me', to: 'users#me'
+  get '/user/me', to: 'users#show'
 #admin
   post "data/admin", to: "admin#create"
 #student
@@ -43,7 +42,8 @@ Rails.application.routes.draw do
   delete '/message/:id', to: 'messages#destroy'
 
 
-
+# get students
+get '/students', to: "students#index"
 
  #randomly pair students
   get '/pair_students', to: 'pairs#pair_students'

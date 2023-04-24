@@ -1,22 +1,52 @@
-import React from "react";
+import React, { Component } from "react";
 
-function Homepage() {
-  return (
-    <div className="home-container">
-      <div className="home-banner">
-        <img src="https://images.app.goo.gl/3BtkuNPo1JMRVwXV6" alt="Moringa Pair Logo" />
-        <h1>Moringa Pair</h1>
-        <p>  Pairs students randomly and keeps track of each pair.</p>
+import TypeWriterEffect from "react-typewriter-effect";
+import logo from "./logo.png";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "../css/Homepage.css";
 
-        <Link to="/loginform" className="btn btn-primary">Login</Link>
-        <Link to="/signupform" className="btn btn-primary">Sign up</Link>
-        <Link to="/students" className="btn btn-primary">Students</Link>
+class HomePage extends Component {
+  render() {
+    return (
+      <div className="homepage-container mx-auto h-100">
+        <div className="typewriter-container">
+          <div className="typewriter">
+          <TypeWriterEffect
+  textStyle={{
+    fontFamily: "Red Hat Display",
+    color: "navy",
+    fontWeight: 700,
+    fontSize: "3.5em",
+  }}
+  startDelay={2000}
+  cursorColor="#3F3D56"
+  multiText={[
+    "Hey there,Welcome to moringa pair...",
+    " Connect with a study partner and stay organized ",
+    "and productive to achieve your goals.",
+    "Welcome to Moringa_Pair.",
+  ]}
+  multiTextDelay={1000}
+  typeSpeed={30}
+  eraseSpeed={30}
+  eraseDelay={2000}
+  eraseSeq={[false, true, true, true]}
+  repeat={true}
+  repeatDelay={2000}
+  repeatDelayOnErasing={2000}
+  repeatTimes={-1}
+  onRepeat={() => console.log('Text repeated!')}
+/>
 
-       
+
+          </div>
+        </div>
+        <div className="logo-container">
+          <img src={logo} alt="moringa" className="img-fluid" />
+        </div>
       </div>
-      </div>
-    </div>
-  );
+    );
+  }
 }
 
-export default Homepage;
+export default HomePage;

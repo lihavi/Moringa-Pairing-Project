@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Homepage from './components/Homepage';
 import SignupForm from './components/SignupForm';
@@ -19,6 +19,8 @@ import Studentdashboard from './components/Studentdashboard';
 import Adminprofile from './components/profile/Adminprofile';
 import Studentprofile from './components/profile/Studentprofile';
 import axios from 'axios';
+import Adminfeedback from './components/feedback/Adminfeedback';
+import Studentfeedback from './components/feedback/Studentfeedback';
 
 
 function App() {
@@ -59,6 +61,7 @@ function App() {
 
     <NavBar logout={logout} token={token} />
 
+
   
     
       
@@ -87,6 +90,14 @@ function App() {
           {userRole === 'admin' && (
             <Route path="/admindashboard" element={ <div className="dashboard-container">
 
+
+<div className='conMai pt-5'>
+    <Routes>
+      <Route path="/loginform" element={!token ? <LoginForm setToken={setToken} setUserRole={setUserRole} handleSubmit={handleSubmit} setEmail={setEmail} setPassword={setPassword} email={email} password={password} /> : <Navigate to={userRole === 'admin' ? '/admindashboard' : '/studentdashboard'} />} />
+      <Route path="/signupform" element={!token ? <SignupForm setToken={setToken} setUserRole={setUserRole} /> : <Navigate to={userRole === 'admin' ? '/admindashboard' : '/studentdashboard'} />} />
+            {userRole === 'admin' && (
+      <Route path="/admindashboard" element={ <div className="dashboard-container">
+
             <Sidebar userRole={userRole}/>
             <Admindashboard />
           </div>} />
@@ -109,6 +120,35 @@ function App() {
               <Adminprofile token={token} />
               </div>} />
           )}
+
+      {/* feedbacks */}
+          {userRole === 'student' && (
+      <Route path="/studentfeedback" element={ <div className="dashboard-container">
+              <Sidebar userRole={userRole}/>
+              <Studentfeedback token={token}/>
+              </div>} />
+          )}
+                    {userRole === 'admin' && (
+      <Route path="/adminfeedback" element={ <div className="dashboard-container">
+              <Sidebar userRole={userRole}/>
+              <Adminfeedback token={token} />
+              </div>} />
+          )}
+
+      {/* messages */}
+          {userRole === 'student' && (
+      <Route path="/studentmessages" element={ <div className="dashboard-container">
+              <Sidebar userRole={userRole}/>
+              <Messaging token={token}/>
+              </div>} />
+          )}
+                    {userRole === 'admin' && (
+      <Route path="/adminmessages" element={ <div className="dashboard-container">
+              <Sidebar userRole={userRole}/>
+              <Messaging token={token} />
+              </div>} />
+          )}
+
       <Route path="/pairing" element={ <div className="dashboard-container">
               <Sidebar userRole={userRole}/>
               <Pairing />
@@ -119,10 +159,9 @@ function App() {
               </div>} />
 
     </Routes>
-
+    </div>
     <Footer />
   </Router>
-
 
   );
 }

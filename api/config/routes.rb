@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount Rswag::Ui::Engine => '/api-docs'
+  mount Rswag::Api::Engine => '/api-docs'
   # # For student
   # root to: 'students#dashboard', constraints: lambda { |request| request.env['warden'].user&.student? }
   resources :students, only: [:index, :show, :update, :create, :destroy]

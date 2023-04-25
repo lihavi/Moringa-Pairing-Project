@@ -1,9 +1,12 @@
-import axios from "axios";
 import {useState} from "react";
+import axios from "axios";
 import logo from '../assets/logo.png'
 import '../css/loginform.css'
 
+
+
 function SignupForm({ setToken }) {
+
   const [fullname, setFullname] = useState('');
   const [email, setEmail] = useState('');
   const [role, setRole] = useState('');

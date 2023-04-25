@@ -5,7 +5,8 @@ import SignupForm from './components/SignupForm';
 import LoginForm from './components/LoginForm';
 import Students from './components/Students';
 import Messaging from './components/Messaging';
-import Pairing from './components/Pairing1';
+// import Pairing from './components/Pairing';
+import Pairing from './components/pairing';
 import Feedback from './components/Feedback';
 import Instructor from './components/Instructor';
 import PairList from './components/Pairlist';
@@ -60,35 +61,7 @@ function App() {
     <Router>
 
     <NavBar logout={logout} token={token} />
-
-
-  
     
-      
-   
-        <Routes>
-          
-          {/* <Route path="/" component={PairList} /> */}
-          <Route
-            path="/loginform"
-            element={!token ? <LoginForm setToken={setToken} setUserRole={setUserRole} /> : <Homepage token={token} />}
-          />
-          <Route
-            path="/signupform"
-            element={!token ? <SignupForm setToken={setToken} setUserRole={setUserRole} /> : <Homepage token={token} />}
-          />
-          <Route
-            path="/"
-            element={
-              token ? (
-                <Pairing token={token} />
-              ) : (
-                <Pairing setToken={setToken} setUserRole={setUserRole} />
-              )
-            }
-          />
-          {userRole === 'admin' && (
-            <Route path="/admindashboard" element={ <div className="dashboard-container">
 
 
 <div className='conMai pt-5'>
@@ -108,6 +81,8 @@ function App() {
               <Studentdashboard />
               </div>} />
           )}
+
+          {/* profile */}
           {userRole === 'student' && (
       <Route path="/studentprofile" element={ <div className="dashboard-container">
               <Sidebar userRole={userRole}/>
@@ -135,6 +110,20 @@ function App() {
               </div>} />
           )}
 
+      {/* students */}
+          {userRole === 'student' && (
+      <Route path="/students" element={ <div className="dashboard-container">
+              <Sidebar userRole={userRole}/>
+              <Students token={token}/>
+              </div>} />
+          )}
+                    {userRole === 'admin' && (
+      <Route path="/students" element={ <div className="dashboard-container">
+              <Sidebar userRole={userRole}/>
+              <Students token={token} />
+              </div>} />
+          )}
+
       {/* messages */}
           {userRole === 'student' && (
       <Route path="/studentmessages" element={ <div className="dashboard-container">
@@ -149,14 +138,18 @@ function App() {
               </div>} />
           )}
 
+          {/* pairing */}
       <Route path="/pairing" element={ <div className="dashboard-container">
               <Sidebar userRole={userRole}/>
-              <Pairing />
+              <Pairing token={token} />
               </div>} />
-      <Route path="/students" element={ <div className="dashboard-container">
+      <Route path="/pairing" element={ <div className="dashboard-container">
               <Sidebar userRole={userRole}/>
-              <Students token={token} />
+              <Pairing token={token} />
               </div>} />
+
+              <Route path="/" element={<Homepage/>} />
+
 
     </Routes>
     </div>

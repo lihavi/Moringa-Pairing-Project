@@ -14,11 +14,17 @@ code {
 .logo {
   height: 30px;
 }
-header {
-  border-bottom: solid black 1px;
-}
+/* header {
+
+  overflow: hidden;
+
+} */
 main {
   padding-top: 0px;
+}
+
+.username {
+  color: #2661d8;
 }
 
 
@@ -303,6 +309,7 @@ body {
   }
   .container {
     text-align: center;
+    
   }
   .navbar.heads {
     height: 39px;
@@ -311,11 +318,16 @@ body {
   }
   .navbar {
     height: 50px;
-    border-radius: 8px;
+    position: fixed;
+    width: 97%;
+    z-index: 1;
+    background-color: #ffffff;
+    border-bottom: solid black 1px;
+    border-radius: 0px;
     -webkit-transition: all 200ms linear;
     transition: all 200ms linear;
     box-shadow: 0 4px 8px 0 rgba(21,21,21,.2);
-    opacity: .92;
+    opacity: 1;
   }
   
   .list {
@@ -349,9 +361,7 @@ body {
   
   }
 
-  .navbar {
-    z-index: 1000;
-  }
+  
  
   @media (min-width: 991.98px) {
     main {
@@ -398,4 +408,17 @@ body {
   background-color: #262E51;
 }
 
+
+
+.conMain {
+  height: 130vh;
+  margin-top: 100px;
+  overflow: auto;
+  width: 100%;
+  box-shadow: 12px 0 15px -4px rgba(31, 73, 125, 0.8),
+             -12px 0 8px -4px rgba(31, 73, 125, 0.8);
+  box-shadow: 0 9px 0px 0px white, 0 -9px 0px 0px white,
+    12px 0 15px -4px rgba(31, 73, 125, 0.8),
+    -12px 0 15px -4px rgba(31, 73, 125, 0.8);
+}
 

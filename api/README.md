@@ -5,7 +5,7 @@
 
 ## Client side Github repository
 
-- [Client side Github repository](https://github.com/lihavi/Moringa-pairing-project)
+- [Client side Github repository](https://github.com/lihavi/Moringa-pairing-project/tree/development/client)
 
 ## Overview
 This is the backend of a web application that pairs students together for collaboration. The app allows instructors to view and manage the pairings, as well as communicate with students through a messaging system.

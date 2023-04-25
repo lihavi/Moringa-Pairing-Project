@@ -1,36 +1,53 @@
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import "./Messaging.css"
 
-import React from 'react'
+const Messaging = () => {
+  const [messages, setMessages] = useState([]);
+  const [newMessage, setNewMessage] = useState({
+    sender: "",
+    recipient: "",
+    content: "",
+  });
 
-function Messaging() {
+  useEffect(() => {
+    const fetchMessages = async () => {
+      const response = await axios.get("https://moringa-pair.onrender.com/messages");
+      setMessages(response.data);
+    };
+    fetchMessages();
+  }, []);
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const response = await axios.post("https://moringa-pair.onrender.com/messages", newMessage);
+      setMessages([...messages, response.data]);
+      setNewMessage({ sender: "", recipient: "", content: "" });
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setNewMessage({ ...newMessage, [name]: value });
+  };
+
+  const handleDelete = async (id) => {
+    try {
+      await axios.delete(`/api/messages/${id}`);
+      setMessages(messages.filter((message) => message.id !== id));
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
-    <div className="containr d-flex justify-content-center pt-3">
-    <div className="pt-0">
-      <h3 className="lab">
-        <u>MESSAGING</u>
-      </h3>
-
-      <div className="card cardp">
-        <label htmlFor="formFile" className="form-label">
-          Email:
-        </label>
-        <div className="form-group col-6">
-          <input type="email" className="form-control" placeholder="Email" />
-          <i className=" input-icon bi bi-envelope"></i>
-        </div>
-
-        <label htmlFor="formFile" className="form-label">
-          Email:
-        </label>
-        <div className="form-group col-6">
-          <input type="email" className="form-control" placeholder="Email" />
-          <i className=" input-icon bi bi-envelope"></i>
-        </div>
-
-      </div>
+    <div>
+      <p>messaging</p>
     </div>
-  </div>
   )
 }
 
-export default Messaging
-
+export default Messaging;

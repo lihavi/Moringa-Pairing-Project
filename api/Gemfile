@@ -34,6 +34,8 @@ gem "jbuilder"
 #set up the swagger docs.
 gem 'rswag'
 
+gem 'faker'
+
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"

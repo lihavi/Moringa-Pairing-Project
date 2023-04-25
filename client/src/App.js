@@ -77,9 +77,9 @@ function App() {
             path="/"
             element={
               token ? (
-                <Messaging token={token} />
+                <Instructor token={token} />
               ) : (
-                <Messaging setToken={setToken} setUserRole={setUserRole} />
+                <Instructor setToken={setToken} setUserRole={setUserRole} />
               )
             }
           />

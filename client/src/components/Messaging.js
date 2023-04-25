@@ -45,13 +45,14 @@ const Messaging = () => {
 
   return (
     <div class="Message">
-      <h1>Messaging</h1>
+      <h2>Messaging</h2>
     <div class="row row-cols-1 row-cols-md-2 g-4">
   {/* <div class="col"> */}
     <div class="card">
       <form>
+      <h1>Pair ID: </h1>
       <div class="input-group mb-3">
-  <label class="input-group-text" for="inputGroupSelect01">Pair ID</label>
+        
   <select class="form-select" id="inputGroupSelect01">
     <option selected>Choose...</option>
     <option value="1">Instructor</option>
@@ -61,15 +62,13 @@ const Messaging = () => {
 <h1>Sender:</h1>
 <div class="input-group mb-3">
   <input type="text" class="form-control" placeholder="Sender's ID" aria-label="Sender's ID" aria-describedby="basic-addon2"/>
-  <span class="input-group-text" id="basic-addon2">@example.com</span>
 </div>
 <h1>Recipient:</h1>
 <div class="input-group mb-3">
   <input type="text" class="form-control" placeholder="Recipient's ID" aria-label="Recipient's ID" aria-describedby="basic-addon2"/>
-  <span class="input-group-text" id="basic-addon2">@example.com</span>
 </div>
+<h1>Content:</h1>
 <div class="input-group">
-<span class="input-group-text">Content</span>
   <textarea class="form-control" aria-label="With textarea"></textarea>
 </div>
 <div class="d-grid gap-2 d-md-flex justify-content-md-end">

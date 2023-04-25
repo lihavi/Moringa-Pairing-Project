@@ -18,7 +18,7 @@
     padding: 3em;
 } */
 .card{
-    background-color: blue;
+    background-color: rgb(255, 255, 255);
     width: auto;
     height: auto;
     margin-top: 10;
@@ -26,7 +26,23 @@
     text-align: center;
     padding: 1em;
     justify-content: center;
+    border-bottom:solid blue 1em;
+    border-right: solid blue 1em;
+    border-radius: 5px;
+    
 }
+
+h2{
+    text-align: center;
+    font-weight: 100;
+}
+
+h1{
+    color: black;
+    text-align: left;
+    font-size: medium;
+}
+
 
 .d-grid{
     margin: 0%;
@@ -34,4 +50,6 @@
     height: auto;
     justify-content: center;
     margin-top: 1em;
+    
+    
 }

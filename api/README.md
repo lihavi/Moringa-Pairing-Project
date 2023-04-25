@@ -5,7 +5,7 @@
 
 ## Client side Github repository
 
-- [Client side Github repository](https://github.com/lihavi/Moringa-pairing-project)
+- [Client side Github repository](https://github.com/lihavi/Moringa-pairing-project/tree/development/client)
 
 ## Overview
 This is the backend of a web application that pairs students together for collaboration. The app allows instructors to view and manage the pairings, as well as communicate with students through a messaging system.
@@ -39,7 +39,6 @@ The backend provides the following API endpoints:
 The app implements basic authentication and authorization, with passwords being stored as hashes in the database. Instructors can only access and modify data related to their own account, while students can only access data related to their own pairing.
 
 ## Deployment
-The backend is deployed on a cloud platform and is accessible through a publicly available API.
 
 Backend link-https://moringa-pair-ikt7.onrender.com
 

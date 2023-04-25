@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Card, Button, Col, Container, Form, Row, Nav } from 'react-bootstrap';
-
 function Pairing() {
   const [pairs, setPairs] = useState([]);
   const [student1Id, setStudent1Id] = useState('');
@@ -19,7 +18,6 @@ function Pairing() {
       setMessage('Failed to generate pairs');
     }
   };
-  
   const handleCreatePair = async (event) => {
     event.preventDefault();
     try {
@@ -31,7 +29,6 @@ function Pairing() {
       setMessage('Failed to create pair');
     }
   };
-
   const handleDeletePair = async (pairId) => {
     try {
       const response = await axios.delete(`http://localhost:3000/pairs/${pairId}`);
@@ -42,7 +39,6 @@ function Pairing() {
       setMessage('Failed to delete pair');
     }
   };
-
   const handleDeleteAllPairs = async () => {
     try {
       const response = await axios.delete(`http://localhost:3000/pairs`);
@@ -53,8 +49,6 @@ function Pairing() {
       setMessage('Failed to delete all pairs');
     }
   };
-  
-
   useEffect(() => {
     const fetchPairs = async () => {
       try {
@@ -67,7 +61,6 @@ function Pairing() {
     };
     fetchPairs();
   }, []);
-
   return (
     <Container fluid>
       <Row>
@@ -75,7 +68,6 @@ function Pairing() {
           <Nav className="flex-column">
             <Nav.Link href="#">Dashboard</Nav.Link>
             <Nav.Link href="#" onClick={handleGeneratePairs}>Generate Pairs</Nav.Link>
-
             <Nav.Link href="#" onClick={handleDeleteAllPairs}>Delete.all</Nav.Link>
           </Nav>
         </Col>
@@ -110,8 +102,6 @@ function Pairing() {
                   </Card.Body>
                 </Card>
               </Col>
-              
-              
             ))}
           </Row>
         </Col>
@@ -119,6 +109,4 @@ function Pairing() {
     </Container>
   );
 }
-export default Pairing; 
-
-
+export default Pairing;

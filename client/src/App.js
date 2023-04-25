@@ -52,7 +52,6 @@ function App() {
   return (
     <Router>
     <NavBar logout={logout} token={token} />
-<div className='main pt-5 '>
     <Routes>
       <Route path="/loginform" element={!token ? <LoginForm setToken={setToken} setUserRole={setUserRole} handleSubmit={handleSubmit} setEmail={setEmail} setPassword={setPassword} email={email} password={password} /> : <Navigate to={userRole === 'admin' ? '/admindashboard' : '/studentdashboard'} />} />
       <Route path="/signupform" element={!token ? <SignupForm setToken={setToken} setUserRole={setUserRole} /> : <Navigate to={userRole === 'admin' ? '/admindashboard' : '/studentdashboard'} />} />
@@ -115,15 +114,8 @@ function App() {
               <Students token={token} />
               </div>} />
     </Routes>
-    </div>
     <Footer />
   </Router>
   );
 }
 export default App;
-
-
-
-
-
-

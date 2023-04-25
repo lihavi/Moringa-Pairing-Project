@@ -22,8 +22,9 @@ const Studentprofile = ({ token }) => {
   }, [token]);
 
   return (
-    <div className="containr d-flex justify-content-center align-items-center pt-5">
-        {user &&
+    <div className="container d-flex justify-content-center align-items-center pt-5">
+ <div className='pt-5'>
+ {user &&
       <div className="card cardp">
         <div className="upper">
           {/* <img src={img} className="img-fluid" height="5" alt='img' />*/}
@@ -53,6 +54,7 @@ const Studentprofile = ({ token }) => {
         </div>
       </div>
     }
+ </div>
     </div>
   );
 };

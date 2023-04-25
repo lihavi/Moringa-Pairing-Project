@@ -7,9 +7,9 @@ function Footer(){
     <footer className="footer">
       <div className="container">
         <div className="footer__content">
-          <div className="footer__logo">
+          {/* <div className="footer__logo">
            <a href="/"> <img src={logo} width="70px" height="70px" align="left" alt="Logo" /></a>
-          </div>
+          </div> */}
           <div className="footer__social-media">
             <a href="#">
               <i className="fab fa-google"></i>

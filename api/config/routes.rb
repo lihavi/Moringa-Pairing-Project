@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   get '/pairs/create', to: 'pairs#new'
 
   # Feedbacks routes
-  get '/feedbacks', to: 'feedbacks#index'
+  get '/feedbacklist', to: 'feedbacks#index'
   post '/feedback', to: 'feedbacks#create'
   get '/feedback/:id', to: 'feedbacks#show'
   put '/feedback/:id', to: 'feedbacks#update'

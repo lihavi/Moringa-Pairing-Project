@@ -55,8 +55,10 @@ function Sidebar({ userRole }) {
               <i className="fas fa-users fa-fw me-3"></i>
               <span>Students</span>
             </a>
-            {/* pairlist */}
-            {userRole === "admin" && (
+         
+
+             {/* pairing */}
+             {userRole === "admin" && (
               <Link
                 to="/pairing"
                 className="list-group-item list-group-item-action py-2 ripple"
@@ -65,13 +67,13 @@ function Sidebar({ userRole }) {
                 <span>Pairing</span>
               </Link>
             )}
-             {userRole === "student" && (
+            {userRole === "student" && (
               <Link
-                to="/pairing"
+                to="/pairList"
                 className="list-group-item list-group-item-action py-2 ripple"
               >
                 <i className="fas fa-user fa-fw me-3"></i>
-                <span>Pairlist</span>
+                <span>PairList</span>
               </Link>
             )}
 

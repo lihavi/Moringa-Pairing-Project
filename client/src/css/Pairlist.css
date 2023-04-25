@@ -1,3 +1,6 @@
+.pair {
+ padding-left: 50%;
+}
 
 .grid-container {
     display: grid;

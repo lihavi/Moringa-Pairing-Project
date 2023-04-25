@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
 
 code {
@@ -21,10 +22,16 @@ code {
 } */
 main {
   padding-top: 0px;
+
 }
 
 .username {
   color: #2661d8;
+}
+
+.container {
+  text-align: center;
+  
 }
 
 
@@ -35,8 +42,8 @@ body {
       sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    max-width: 1300px;
   
+   
   }
   
   code {
@@ -307,10 +314,7 @@ body {
     outline: none;
     box-shadow: 0 4px 8px 0 rgba(21,21,21,.2);
   }
-  .container {
-    text-align: center;
-    
-  }
+
   .navbar.heads {
     height: 39px;
     background-color: rgba(13, 15, 29, 0.816);
@@ -319,7 +323,7 @@ body {
   .navbar {
     height: 50px;
     position: fixed;
-    width: 97%;
+    width: 100%;
     z-index: 1;
     background-color: #ffffff;
     border-bottom: solid black 1px;
@@ -407,7 +411,9 @@ body {
 .slist {
   background-color: #262E51;
 }
-
+.main {
+  padding-left: 200px;
+}
 
 
 .conMain {
@@ -420,5 +426,8 @@ body {
   box-shadow: 0 9px 0px 0px white, 0 -9px 0px 0px white,
     12px 0 15px -4px rgba(31, 73, 125, 0.8),
     -12px 0 15px -4px rgba(31, 73, 125, 0.8);
+}
+.header {
+  width: 100%;
 }
 

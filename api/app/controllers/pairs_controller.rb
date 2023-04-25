@@ -1,5 +1,6 @@
 class PairsController < ApplicationController
     skip_before_action :verify_authenticity_token
+    skip_before_action :authorize_request, only: [:index, :destroy, :destroy_all, :pair_students]
 
     
     def index

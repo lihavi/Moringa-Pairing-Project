@@ -1,12 +1,17 @@
 class FeedbacksController < ApplicationController
-    before_action :set_feedback, only: [:show, :update, :destroy]
+  skip_before_action :authorize_request, only: [:show, :update, :destroy, :create]
   
     # GET /feedbacks
     def index
-      feedbacks = Feedback.all
+      feedbacks = Feedback.all.map do |feedback|
+        user = User.find(feedback.user_id)
+        feedback.attributes.merge({ fullname: user.fullname })
+      end
       render json: feedbacks
     end
-  
+
+
+   
     # GET /feedbacks/1
     def show
       render json: feedback
@@ -14,7 +19,7 @@ class FeedbacksController < ApplicationController
   
     # POST /feedback
     def create
-      feedback = Feedback.new(feedback_params)
+      feedback = Feedback.new(feedbacks_params)
   
       if feedback.save
         render json: feedback, status: :created, location: feedback
@@ -38,15 +43,10 @@ class FeedbacksController < ApplicationController
     end
   
     private
-      # Use callbacks to share common setup or constraints between actions.
-      def set_feedback
-        feedback = Feedback.find(params[:id])
-        render json: feedback
-      end
+    def feedbacks_params
+      params.permit(:user_id, :comment)
   
-      # Only allow a list of trusted parameters through.
-      def feedback_params
-        params.require(:feedback).permit(:user_id, :instructor_id, :comment)
-      end
+  end
+    
 end
   

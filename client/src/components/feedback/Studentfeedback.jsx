@@ -1,7 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import './feedback.css';
+import '../../index.css'
+import axios from "axios";
 
-function Studentfeedback() {
+function Studentfeedback({user}) {
+  const [user_id, setUser_id] = useState('');
+  const [comment, setComment] = useState('');
+
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const response = await axios.post(`http://localhost:3000/feedback`, {
+        user_id: user.id,
+       comment,
+      });
+      
+    } catch (error) {
+      console.error(error);
+    }
+  };
   return (
     <div className="containr d-flex justify-content-center pt-3">
       <div className="pt-0">
@@ -9,14 +27,19 @@ function Studentfeedback() {
           <u>FEEDBACK</u>
         </h3>
 
-        <div className="card cardp">
+        <div className="card cardp" >
+    
           <label htmlFor="formFile" className="form-label">
-            Email:
+            Comment:
           </label>
           <div className="form-group col-6">
-            <input type="email" className="form-control" placeholder="Email" />
-            <i className=" input-icon bi bi-envelope"></i>
+          {user && (  
+            <input type="comment" className="form-control" placeholder="Comment" value={user.id} disabled />
+            )}
+        
+           
           </div>
+    
           <div className="mb-3 ">
             <label
               htmlFor="exampleFormControlTextarea1"
@@ -29,12 +52,13 @@ function Studentfeedback() {
                 className="form-control"
                 placeholder="Leave a comment here"
                 id="floatingTextarea2"
+                value={comment} onChange={(e) => setComment(e.target.value)} 
                 style={{ height: "150px" }}
               ></textarea>
               <label htmlFor="floatingTextarea2">✉️ Leave a feedback </label>
             </div>
             <div className="d-flex pbtn ">
-              <button type="submit" className="mt-3 ms-5 btn btn-primary">
+              <button type="submit" onClick={handleSubmit} className="mt-3 ms-5 btn btn-primary">
                 Send
               </button>
             </div>

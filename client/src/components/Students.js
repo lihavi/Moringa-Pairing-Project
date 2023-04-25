@@ -21,13 +21,13 @@ function Students({token}) {
         fetchStudents();
       }, []);
   return (
-    <div className='container text-center pt-2 admindashboard'>
+    <div className='container text-center pt-5 me-5 admindashboard'>
         <h4><u>STUDENTS LIST</u></h4>
-        <div className="row align-items-center ">
+        <div className="row align-items-center pt-3 ms-4">
 
         {students.map((student) => ( 
     <div className="col-3 pt-1" key={student.id}>
-     <div className="card slist" style={{width: "15.4rem"}}>
+     <div className="card slist bg-dark" style={{width: "15.4rem"}}>
      <p className="total mb-1"><b>{student.fullname}</b></p>
   <div className="card-body pt-0 text-start ms-2">
    <p className="total mb-0"><b>Student id:</b> {student.id}  </p>

@@ -6,6 +6,20 @@ footer {
     height: 50px;
     left: 0;
     right: 0;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+  }
+
+  headr {
+    position: fixed;
+    background-color: gray;
+    top: 0;
+    z-index: 1;
+    display: relative;
+    height: 50px;
+    left: 0;
+    right: 0;
   justify-content: center;
   text-align: center;
   align-items: center;

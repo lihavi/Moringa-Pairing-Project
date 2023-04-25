@@ -1,4 +1,5 @@
 class CreateInstructors < ActiveRecord::Migration[7.0]
+  
   def change
     unless table_exists? :instructors
     create_table :instructors do |t|

@@ -1,0 +1,55 @@
+.Message{
+    width: auto;
+    height: auto;
+    text-align: center;
+}
+
+.row{
+    width: auto;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+}
+/* .col{
+    background-color: blue;
+    width: auto;
+    height: auto;
+    margin: 0%;
+    padding: 3em;
+} */
+.card{
+    background-color: rgb(255, 255, 255);
+    width: auto;
+    height: auto;
+    margin-top: 10;
+    padding: 3em;
+    text-align: center;
+    padding: 1em;
+    justify-content: center;
+    border-bottom:solid blue 1em;
+    border-right: solid blue 1em;
+    border-radius: 5px;
+    
+}
+
+h2{
+    text-align: center;
+    font-weight: 100;
+}
+
+h1{
+    color: black;
+    text-align: left;
+    font-size: medium;
+}
+
+
+.d-grid{
+    margin: 0%;
+    width: auto;
+    height: auto;
+    justify-content: center;
+    margin-top: 1em;
+    
+    
+}

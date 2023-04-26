@@ -11,7 +11,7 @@ footer {
     align-items: center;
   }
 
-  headr {
+  header {
     position: fixed;
     background-color: gray;
     top: 0;
@@ -30,9 +30,7 @@ footer {
     text-decoration: none;
     font-size: 25px;
     display: relative;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
+
   }
   
   .footer__social-media a:hover {

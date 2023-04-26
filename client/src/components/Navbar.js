@@ -24,7 +24,7 @@ function NavBar({ token, logout }) {
 
   return (
    
-      <div> 
+      <header> 
       <nav className="navbar navbar-expand-sm ">
     <div className="container-fluid">
       <Link className="navbar-brand" to="/"><img className="logo" src={logo} alt="moringa logo" /> </Link>
@@ -70,7 +70,7 @@ function NavBar({ token, logout }) {
     </div>
   </nav>
 
-   </div>
+   </header>
   
      
   );

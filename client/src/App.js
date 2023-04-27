@@ -4,7 +4,7 @@ import Homepage from './components/Homepage';
 import SignupForm from './components/SignupForm';
 import LoginForm from './components/LoginForm';
 import Students from './components/Students';
-
+//import Messaging from './components/Messaging';
 import Pairing from './components/Pairing';
 import Feedback from './components/Feedback';
 import Instructor from './components/Instructor';

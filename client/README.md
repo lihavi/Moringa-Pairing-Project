@@ -1,70 +1,108 @@
-# Getting Started with Create React App
+# Moringa Pair Project 
+# PROJECT NAME 
+## MORINGA PAIR SYSTEM USING React JS
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+This project includes a system that randomly pair students and keep track of each pair.
+It changes/reshuffles weekly.
 
-In the project directory, you can run:
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://moringa-pairing-project-2g89.vercel.app/">
+ <img src="https://flatironschool.com/wp-content/uploads/2022/02/moringa-flatiron-logo.png" alt="moringa-pair" width="100">
+ </a>
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+  <h2 align="center">Moringa-pair</h2>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+  <h4 align="center">
+  <br />
+  <a href="https://moringa-pairing-project-2g89.vercel.app/" target="_blank">View Live</a>
+   </h4>
+   </div>
 
-### `npm test`
+   <br />
+  
+  ## Getting started 
+  **Core Functionalities:**
+- Login
+- Create an account
+- The random pairing of students
+- Does this without any sort of metrics but ensures that there's no duplication of pairs i.e. keep track of each pair per week
+- Data visualization and filters of the pairs spread over the weeks such that on is able to filter out and know that on this week, who was paired with who
+- TMs can see the history of pairings
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Future considerations:**
+Pair students based on their strengths and weaknesses.
+Can they do quiz tests to check their weaknesses and strengths, then be allowed to pair with others based on their weaknesses and strengths?
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This application maintains most of the functionalities if not all.
+It is an outstanding project usable on all devices, detects signed in users and connects them to their respective accounts.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Built With
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Main Technologies:**
 
-### `npm run eject`
+* ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+* ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
+* ![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<!-- GETTING STARTED -->
+## Getting startted
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Clone-Locally
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+* Enter this url: [https://moringa-pairing-project-2g89.vercel.app/](https://moringa-pairing-project-2g89.vercel.app/) in your web browser.
+* Once opened navigate to the top left level of the project a green code download button will be visible on the righthand side.
+* Select download Zip option from drop down menu.
+* Once the download is complete you will be able to access my project locally.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Prerequisites
 
-## Learn More
+* npm
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+ ```sh
+  npm install 
+  ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<!-- LICENSE -->
+## License
 
-### Code Splitting
+Distributed under the MIT License.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Copyright (c) 2023 Mickey Awino and others
 
-### Analyzing the Bundle Size
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
 
-### Making a Progressive Web App
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+### References
+Stalkoverflow
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+### Authors
+[Mickey Awino](https://github.com/Mickey254-ja)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+[Vivian Lihavi](https://github.com/lihavi)
 
-### Deployment
+[Kelvin Kimutai](https://github.com/kevinkkimutai)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+[Markpaul](https://github.com/maqiie)
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[Frankline Kipchumba](https://github.com/FranklinKipchumba)

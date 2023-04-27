@@ -4,7 +4,7 @@ import Homepage from './components/Homepage';
 import SignupForm from './components/SignupForm';
 import LoginForm from './components/LoginForm';
 import Students from './components/Students';
-//import Messaging from './components/Messaging';
+
 import Pairing from './components/Pairing';
 import Feedback from './components/Feedback';
 import Instructor from './components/Instructor';
@@ -130,7 +130,7 @@ function App() {
           )}
 
       {/* messages */}
-          {userRole === 'student' && (
+          {/* {userRole === 'student' && (
       <Route path="/studentmessages" element={ <div className="dashboard-container">
               <Sidebar userRole={userRole}/>
               <Messaging token={token}/>
@@ -141,7 +141,7 @@ function App() {
               <Sidebar userRole={userRole}/>
               <Messaging token={token} />
               </div>} />
-          )}
+          )} */}
 
 {/* pairing */}
 {userRole === 'student' && (

@@ -15,25 +15,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_25_093224) do
   enable_extension "plpgsql"
 
   create_table "feedbacks", force: :cascade do |t|
-    t.integer "user_id"
-    t.string "comment"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "instructors", force: :cascade do |t|
-    t.integer "user_id"
-    t.string "fullname"
-    t.string "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "messages", force: :cascade do |t|
-    t.integer "sender_user_id"
-    t.integer "recipient_user_id"
-    t.string "content"
     t.integer "pair_id"
+    t.integer "instructor_id"
+    t.string "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

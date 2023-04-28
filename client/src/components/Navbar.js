@@ -1,16 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import logo from '../assets/logo.png'
+
 function NavBar({ token, logout }) {
 
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-
-    fetch('https://m-pair.onrender.com/user/me', {
-
     fetch('http://localhost:3000/user/me', {
-
       headers: {
         Authorization: `Bearer ${token}`
       }

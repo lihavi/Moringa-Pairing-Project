@@ -6,11 +6,13 @@ footer {
     height: 50px;
     left: 0;
     right: 0;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
     justify-content: center;
     text-align: center;
     align-items: center;
   }
-
   header {
     position: fixed;
     background-color: gray;

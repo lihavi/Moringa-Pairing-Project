@@ -108,7 +108,6 @@ function App() {
               </div>} />
               
           {userRole === 'admin' && (
-=======
   return (
     <Router>
     <NavBar logout={logout} token={token} />

@@ -53,6 +53,10 @@ get '/students', to: "students#index"
   #get all pairs
   get '/pairs', to: 'pairs#index' 
   
+
+  #randomize_pairs 
+
+  get '/randomize_pairs', to: 'pairs#randomize_pairs'
 #deletes a pair by id
   delete '/pairs/:id', to: 'pairs#destroy'
 

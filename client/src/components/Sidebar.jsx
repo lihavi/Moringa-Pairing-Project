@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function Sidebar({ userRole }) {
   return (
     <div>
-      <nav id="sidebarMenu" className="collapse d-lg-block sidebar collapse">
+      <nav id="sidebarMenu" className="collapse d-sm-block sidebar collapse">
         <div className="position-sticky">
           
           <div className="list-group list-group-flush mx-0 mt-4">
@@ -44,7 +44,7 @@ function Sidebar({ userRole }) {
                 to="/studentdashboard"
                 className="list-group-item list-group-item-action py-2 ripple"
               >
-                <i className="fas fa-envelope fa-fw me-3"></i>
+                <i className="fas fa-clipboard fa-fw me-3"></i>
                 <span>Dashboard</span>
               </Link>
             )}
@@ -55,7 +55,7 @@ function Sidebar({ userRole }) {
                 to="/students"
                 className="list-group-item list-group-item-action py-2 ripple"
               >
-                <i className="fas fa-user-tie fa-fw me-3"></i>
+                <i className="fas fa-users fa-fw me-3"></i>
                 <span>Students</span>
               </Link>
             )}
@@ -64,7 +64,7 @@ function Sidebar({ userRole }) {
                 to="/students"
                 className="list-group-item list-group-item-action py-2 ripple"
               >
-                <i className="fas fa-envelope fa-fw me-3"></i>
+                <i className="fas fa-users fa-fw me-3"></i>
                 <span>Students</span>
               </Link>
             )}
@@ -75,7 +75,7 @@ function Sidebar({ userRole }) {
                 to="/pairing"
                 className="list-group-item list-group-item-action py-2 ripple"
               >
-                <i className="fas fa-user fa-fw me-3"></i>
+                <i className="fas fa-list-ol fa-fw me-3"></i>
                 <span>Pairing</span>
               </Link>
             )}
@@ -84,7 +84,7 @@ function Sidebar({ userRole }) {
                 to="/pairList"
                 className="list-group-item list-group-item-action py-2 ripple"
               >
-                <i className="fas fa-user fa-fw me-3"></i>
+                <i className="fas fa-list-ol fa-fw me-3"></i>
                 <span>PairList</span>
               </Link>
             )}
@@ -95,7 +95,7 @@ function Sidebar({ userRole }) {
                 to="/adminfeedback"
                 className="list-group-item list-group-item-action py-2 ripple"
               >
-                <i className="fas fa-user fa-fw me-3"></i>
+                <i className="fas fa-message fa-fw me-3"></i>
                 <span>Feedback</span>
               </Link>
             )}
@@ -104,7 +104,7 @@ function Sidebar({ userRole }) {
                 to="/studentfeedback"
                 className="list-group-item list-group-item-action py-2 ripple"
               >
-                <i className="fas fa-user fa-fw me-3"></i>
+                <i className="fas fa-message fa-fw me-3"></i>
                 <span>Feedback</span>
               </Link>
             )}

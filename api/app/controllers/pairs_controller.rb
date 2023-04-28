@@ -1,7 +1,7 @@
 class PairsController < ApplicationController
     skip_before_action :verify_authenticity_token
-    skip_before_action :authorize_request, only: [:index, :destroy, :destroy_all, :pair_students]
-
+    skip_before_action :authorize_request, only: [:index, :destroy, :destroy_all,  :randomize_pairs, :pair_students]
+ 
     
     def index
       @pairs = Pair.select('pairs.*, s1.fullname AS student1_name, s2.fullname AS student2_name')
@@ -100,6 +100,40 @@ end
         redirect_to pairs_path, notice: "Pairs were already created this week."
       end
     end
+
+
+    def randomize_pairs
+      # Get the latest pair records created in the current week
+      latest_pairs = Pair.where(week_no: Date.today.cweek)
+    
+      # Check if there are pairs for the current week
+      if latest_pairs.any?
+        # Get the shuffled students from the latest pairs
+        shuffled_students = latest_pairs.flat_map { |pair| [pair.student1, pair.student2] }.shuffle
+      
+        # Divide the shuffled students into pairs
+        new_pairs = shuffled_students.each_slice(2).to_a
+      
+        # Update the existing pair records in the database
+        latest_pairs.each_with_index do |pair, index|
+          pair.update(
+            student1_id: new_pairs[index][0].id,
+            student2_id: new_pairs[index][1].id,
+            student1_user_id: new_pairs[index][0].id,
+            student2_user_id: new_pairs[index][1].id,
+          )
+        end
+          
+        # Redirect to the pairs index page with a success message
+        redirect_to pairs_path, notice: "Pairs have been randomized."
+      else
+        # Redirect to the pairs index page with an error message
+        redirect_to pairs_path, alert: "There are no pairs for the current week."
+      end
+    end
+    
+
+
     def destroy_all
       if Pair.destroy_all
         redirect_to pairs_path, notice: "All pairs were successfully deleted."

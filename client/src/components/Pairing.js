@@ -16,6 +16,19 @@ function Pairing({token}) {
       setMessage('Failed to generate pairs');
     }
   };
+
+
+  const handleRandmizePairs = async () => {
+    try{
+      const response = await axios.get ('http://localhost:3000/randomize_pairs');
+      setPairs(response.data);
+      setMessage("pairs Randomized sucessfully")
+    }catch(error){
+      console.error(error);
+      setMessage("Failed to randomize pairs");
+
+    }
+    };
   const handleCreatePair = async (event) => {
     event.preventDefault();
     try {
@@ -67,7 +80,9 @@ function Pairing({token}) {
           <div className="flex-column ms-5">
             <a className='ms-3' href="#" onClick={handleGeneratePairs}>Generate Pairs</a>
             <a className='ms-3' href="#" onClick={handleDeleteAllPairs}>Delete.all</a>
+            <a className='ms-3' href='#' onClick={handleRandmizePairs}>Randomize</a>
             </div>
+            <p>{message}</p>
      </Col>
         <div className="row align-items-center pt-0 ms-5 mb-5">
 

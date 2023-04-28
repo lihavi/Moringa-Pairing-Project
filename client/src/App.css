@@ -11,6 +11,11 @@ footer {
   align-items: center;
   }
 
+  .stdash {
+    padding-left: 550px;
+    padding-top: 10px;
+    text-decoration: underline;
+  }
   header {
     position: fixed;
     background-color: gray;

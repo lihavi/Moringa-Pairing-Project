@@ -6,7 +6,7 @@ import axios from "axios";
 function Studentfeedback({user}) {
   const [user_id, setUser_id] = useState('');
   const [comment, setComment] = useState('');
-
+  const [message, setMessage] = useState('');
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -14,7 +14,9 @@ function Studentfeedback({user}) {
       const response = await axios.post(`http://localhost:3000/feedback`, {
         user_id: user.id,
        comment,
+      
       });
+      setMessage('Feedback submitted successfully!');
       
     } catch (error) {
       console.error(error);
@@ -28,7 +30,7 @@ function Studentfeedback({user}) {
         </h3>
 
         <div className="card cardp" >
-    
+          
           <label htmlFor="formFile" className="form-label">
             Comment:
           </label>
@@ -56,12 +58,17 @@ function Studentfeedback({user}) {
                 style={{ height: "150px" }}
               ></textarea>
               <label htmlFor="floatingTextarea2">✉️ Leave a feedback </label>
+    
             </div>
-            <div className="d-flex pbtn ">
+            
+           <div>
+            <i className="ms-5">{message}</i>
+           <div className="d-flex pbtn ">
               <button type="submit" onClick={handleSubmit} className="mt-3 ms-5 btn btn-primary">
                 Send
               </button>
             </div>
+           </div>
           </div>
         </div>
       </div>

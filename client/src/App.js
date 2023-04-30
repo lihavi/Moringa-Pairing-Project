@@ -68,12 +68,66 @@ function App() {
     }
   };
 
+  const [students, setStudents] = useState([]);
+
+  const fetchStudents = async () => {
+      try {
+        const response = await axios.get(`http://localhost:3000/students`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        setStudents(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+  
+    useEffect(() => {
+      fetchStudents();
+    }, []);
+
   const logout = () => {
     localStorage.removeItem('token');
     localStorage.removeItem('userRole');
     setToken(null);
     setUserRole(null);
   };
+
+
+  const [pairs, setPairs] = useState([]);
+  const [feedback, setFeedback] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:3000/pairs")
+      .then((response) => {
+        setPairs(response.data);
+        console.log(response.data)
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
+  const totalPairs = pairs.length;
+
+  const fetchfeedback = async () => {
+      try {
+        const response = await axios.get(`http://localhost:3000/feedbacklist`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        setFeedback(response.data);
+        console.log(response.data)
+      } catch (error) {
+        console.error(error);
+      }
+    };
+  
+    useEffect(() => {
+      fetchfeedback();
+    }, []);
 
   return (
     <Router>
@@ -93,13 +147,13 @@ function App() {
           {userRole === 'admin' && (
       <Route path="/admindashboard" element={ <div className="dashboard-container">
             <Sidebar userRole={userRole}/>
-            <Admindashboard token={token} />
+            <Admindashboard token={token} students={students} />
           </div>} />
           )}
           {userRole === 'student' && (
       <Route path="/studentdashboard" element={ <div className="dashboard-container">
               <Sidebar userRole={userRole}/>
-              <Studentdashboard token={token} />
+              <Studentdashboard token={token} totalPairs={totalPairs} user={user} />
               </div>} />
           )}
           {userRole === 'student' && (
@@ -119,7 +173,7 @@ function App() {
           {userRole === 'student' && (
       <Route path="/studentfeedback" element={ <div className="dashboard-container">
               <Sidebar userRole={userRole}/>
-              <Studentfeedback token={token} user={user}/>
+              <Studentfeedback token={token} user={user} />
               </div>} />
           )}
                     {userRole === 'admin' && (

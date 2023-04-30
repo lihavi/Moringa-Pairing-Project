@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import img from '../assets/logo.png'
-function Studentdashboard({token}) {
+function Studentdashboard({token, totalPairs}) {
 
   const [user, setUser] = useState(null);
 
@@ -24,14 +24,15 @@ function Studentdashboard({token}) {
    
       <div className="containe pt-5 me-5 admindashboar">
           <h3 className="stdash">Students Dashboard</h3>
+          {user &&
 <div class="row justify-content-center pt-4">
-  
-    <div class="col-3">
+
+    <div class="col-2 pt-5 ms-0">
    <div className="row pt-3">
    <div className="card bg-dark " style={{width: "18rem"}}>
   <div className="card-body">
-    <h4 className="card-title ms-0"><i className="fas fa-users fa-fw me-3"></i><span>Group</span></h4>
-   <h6 className="total ms-5">No: no  <a className="ms-4" href="/"> view</a> </h6>
+    <h4 className="card-title ms-0"><i className="fas fa-users fa-fw me-3"></i><span>Pairs</span></h4>
+   <h6 className="total ms-5">Total: {totalPairs}</h6>
   
   </div>
 </div>
@@ -41,22 +42,15 @@ function Studentdashboard({token}) {
 <div className="card bg-dark pt-2" style={{width: "18rem"}}>
   <div className="card-body">
     <h4 className="card-title ms-0"><i class="fas fa-graduation-cap fa-fw me-3"></i><span>Grade</span></h4>
-    <h6 className="total ms-5">grade: 10  <a className="ms-4" href="/"> view</a> </h6>
+    <h6 className="total ms-5">Grade: 6 </h6>
   </div>
 </div>
 </div>
 
-<div className="row pt-3">
-<div className="card bg-dark" style={{width: "18rem"}}>
-  <div className="card-body">
-    <h4 className="card-title ms-0"><i className="fas fa-user fa-fw me-3"></i><span>Assigned TM</span></h4>
-    <h6 className="total ms-5">Name: Name of TM</h6>
-  </div>
-</div>
-</div>
+
     </div>
     <div class="col-4">
-     {user &&
+    
       <div className="card cardp">
         <div className="upper">
           {/* <img src={img} className="img-fluid" height="5" alt='img' />*/}
@@ -85,9 +79,11 @@ function Studentdashboard({token}) {
           </div>
         </div>
       </div>
-    }
+    
     </div>
+
   </div>
+}
 </div>
   
    

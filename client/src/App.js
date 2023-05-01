@@ -22,6 +22,7 @@ import axios from 'axios';
 import Adminfeedback from './components/feedback/Adminfeedback';
 import Studentfeedback from './components/feedback/Studentfeedback';
 import Pairing1 from './components/Pairing';
+import ResetPassword from './components/Resetpassword';
 
 
 
@@ -137,6 +138,7 @@ function App() {
 
     <Routes className="main pt-5">
     <Route path='/' element={<Homepage />} />
+    <Route path='/resetpassword' element={<ResetPassword />} />
       <Route path="/loginform" element={!token ? <LoginForm setToken={setToken} setUserRole={setUserRole} handleSubmit={handleSubmit} setEmail={setEmail} setPassword={setPassword} email={email} password={password} /> : <Navigate to={userRole === 'admin' ? '/admindashboard' : '/studentdashboard'} />} />
       <Route path="/signupform" element={!token ? <SignupForm setToken={setToken} setUserRole={setUserRole} /> : <Navigate to={userRole === 'admin' ? '/admindashboard' : '/studentdashboard'} />} />
 

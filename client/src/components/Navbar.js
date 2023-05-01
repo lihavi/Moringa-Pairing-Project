@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from '../assets/logo.png'
 
-function NavBar({ token, logout }) {
+function NavBar({ token, setToken, userRole, setUserRole }) {
 
   const [user, setUser] = useState(null);
 
@@ -22,6 +22,17 @@ function NavBar({ token, logout }) {
       });
   }, [token]);
 
+  const navigate = useNavigate();
+  
+  const logout = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('userRole');
+    setToken(null);
+    setUserRole(null);
+    navigate('/');
+  };
+
+
   return (
    
       <header> 
@@ -33,13 +44,16 @@ function NavBar({ token, logout }) {
       </button>
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+        {userRole === "student" && (
           <li className="nav-item">
-             <Link className="nav-link " to="/studentdashboard">student</Link>
+             <Link className="nav-link " to="/studentdashboard">Dashboard</Link>
           </li>
+        )}
+         {userRole === "admin" && (
           <li className="nav-item">
-          <Link className="nav-link " to="/admindashboard">Admin</Link> 
+          <Link className="nav-link " to="/admindashboard">Dashboard</Link> 
           </li>
-        
+         )}
         </ul>
         <div className="d-flex">
         {token ?(

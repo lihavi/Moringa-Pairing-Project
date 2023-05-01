@@ -24,6 +24,7 @@ import Studentfeedback from './components/feedback/Studentfeedback';
 import Pairing1 from './components/Pairing';
 
 
+
 function App() {
   const [token, setToken] = useState(localStorage.getItem('token') || null);
   const [userRole, setUserRole] = useState(localStorage.getItem('userRole') || null);
@@ -132,7 +133,7 @@ function App() {
   return (
     <Router>
 
-    <NavBar logout={logout} token={token} />
+    <NavBar logout={logout} token={token} userRole={userRole} setToken={setToken} setUserRole={setUserRole} />
 
     <Routes className="main pt-5">
     <Route path='/' element={<Homepage />} />

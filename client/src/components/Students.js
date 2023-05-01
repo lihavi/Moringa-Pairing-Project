@@ -30,8 +30,8 @@ function Students({token}) {
      <div className="card slist text-black" style={{width: "15.4rem"}}>
      <p className="total mb-1">{student.id}. <b><u>{student.fullname}</u></b></p>
   <div className="card-body pt-0 text-start ms-2">
-   <p className="total mb-0"><b>Grade:</b> {student.grade}  </p>
-   <p className="total mb-0"><b>Group:</b> {student.id}  </p>
+   <p className="total mb-0"><b>Grade:</b> {student.grade}  <b className='ms-5'>Group:</b> {student.id}  </p>
+   <p className="total mb-0"> </p>
    <p className="total mb-0"><b>Adm.Date:</b> {new Date(student.created_at).toLocaleString()} </p>
   </div>
 </div>

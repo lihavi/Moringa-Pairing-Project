@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import './profile/studentprofile.css'
 import img from '../assets/logo.png'
 import axios from "axios";
-function Admindashboard({token, students}) {
+function Admindashboard({token}) {
    
   const [user, setUser] = useState(null);
 
@@ -58,6 +58,25 @@ function Admindashboard({token, students}) {
       fetchfeedback();
     }, []);
     const totalfeedback = feedback.length;
+
+    const [students, setStudents] = useState([]);
+
+    const fetchStudents = async () => {
+        try {
+          const response = await axios.get(`https://moringa-pair-akon.onrender.com/students`, {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          });
+          setStudents(response.data);
+        } catch (error) {
+          console.error(error);
+        }
+      };
+    
+      useEffect(() => {
+        fetchStudents();
+      }, []);
 const totalstudents = students.length;
 
   return (

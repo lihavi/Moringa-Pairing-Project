@@ -130,7 +130,7 @@ function Sidebar({ userRole }) {
             )} */}
 
             {/* profiles */}
-            {userRole === "admin" && (
+            {/* {userRole === "admin" && (
               <Link
                 to="/adminprofile"
                 className="list-group-item list-group-item-action py-2 ripple"
@@ -147,7 +147,7 @@ function Sidebar({ userRole }) {
                 <i className="fas fa-user fa-fw me-3"></i>
                 <span>Profile</span>
               </Link>
-            )}
+            )} */}
           </div>
         </div>
       </nav>

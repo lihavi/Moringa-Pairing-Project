@@ -7,7 +7,7 @@ const PairList = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/pairs")
+      .get("https://moringa-pair-akon.onrender.com/pairs")
       .then((response) => {
         setPairs(response.data);
         console.log(response.data)

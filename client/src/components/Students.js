@@ -6,7 +6,7 @@ function Students({token}) {
 
     const fetchStudents = async () => {
         try {
-          const response = await axios.get(`http://localhost:3000/students`, {
+          const response = await axios.get(`https://moringa-pair-akon.onrender.com/students`, {
             headers: {
               Authorization: `Bearer ${token}`,
             },

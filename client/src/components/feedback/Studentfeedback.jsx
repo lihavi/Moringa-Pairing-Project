@@ -11,7 +11,7 @@ function Studentfeedback({user}) {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post(`http://localhost:3000/feedback`, {
+      const response = await axios.post(`https://moringa-pair-akon.onrender.com/feedback`, {
         user_id: user.id,
        comment,
       

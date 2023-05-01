@@ -80,15 +80,15 @@ puts "Loading..."
 # end
 
 
-# User.create!(
-#   [
-#     { fullname: "John Smith", email: "john.smith@example.com", password: "password123", role: "admin" },
-#     { fullname: "Jane Doe", email: "jane.doe@example.com", password: "password456", role: "student" },
-#     { fullname: "Mark Johnson", email: "mark.johnson@example.com", password: "password789", role: "admin" },
-#     { fullname: "Alice Williams", email: "alice.williams@example.com", password: "password123", role: "student" },
-#     { fullname: "Bob Brown", email: "bob.brown@example.com", password: "password456", role: "student" }
-#   ]
-# )
+User.create!(
+  [
+    { fullname: "John Smith", email: "john@gmail.com", password: "1111", role: "admin" },
+    { fullname: "Jane Doe", email: "jane@gmail.com", password: "1111", role: "student" },
+    { fullname: "Mark Johnson", email: "mark@gmail.com", password: "1111", role: "admin" },
+    { fullname: "Alice Williams", email: "alice@gmail.com", password: "1111", role: "student" },
+    { fullname: "Bob Brown", email: "bob@gmail.com", password: "1111", role: "student" }
+  ]
+)
 
 
 # Student.create!(
@@ -108,7 +108,7 @@ puts "Loading..."
 #   grade: 78,
 #   user_id: 5
 # )
-require 'faker'
+
 
 # puts Seeeddiiingg!!!!
 # Create 10 users
@@ -124,11 +124,10 @@ require 'faker'
 50.times do
   Student.create(
     fullname: Faker::Name.name,
-    grade: Faker::Base.regexify(/[A-F]/),
-    user: User.order("RANDOM()").first
+    grade: Faker::Number.between(from: 1, to: 12),
+    user_id: Faker::Number.between(from: 1, to: 10)
   )
 end
-
 
 puts "Loading done."
 

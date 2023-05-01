@@ -6,7 +6,7 @@ const Studentprofile = ({ token }) => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:3000/user/me', {
+    fetch('https://moringa-pair-akon.onrender.com/user/me', {
       headers: {
         Authorization: `Bearer ${token}`
       }

@@ -7,7 +7,7 @@ function Admindashboard({token, students}) {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:3000/user/me', {
+    fetch('https://moringa-pair-akon.onrender.com/user/me', {
       headers: {
         Authorization: `Bearer ${token}`
       }
@@ -26,7 +26,7 @@ function Admindashboard({token, students}) {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/pairs")
+      .get("https://moringa-pair-akon.onrender.com/pairs")
       .then((response) => {
         setPairs(response.data);
         console.log(response.data)
@@ -42,7 +42,7 @@ function Admindashboard({token, students}) {
 
   const fetchfeedback = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/feedbacklist`, {
+        const response = await axios.get(`https://moringa-pair-akon.onrender.com/feedbacklist`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

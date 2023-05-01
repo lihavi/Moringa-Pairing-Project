@@ -8,7 +8,7 @@ function Pairing({token}) {
   const [message, setMessage] = useState('');
   const handleGeneratePairs = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/pair_students');
+      const response = await axios.get('https://moringa-pair-akon.onrender.com/pair_students');
       setPairs(response.data);
       setMessage('Pairs generated successfully');
     } catch (error) {
@@ -20,7 +20,7 @@ function Pairing({token}) {
 
   const handleRandmizePairs = async () => {
     try{
-      const response = await axios.get ('http://localhost:3000/randomize_pairs');
+      const response = await axios.get ('https://moringa-pair-akon.onrender.com/randomize_pairs');
       setPairs(response.data);
       setMessage("pairs Randomized sucessfully")
     }catch(error){
@@ -32,7 +32,7 @@ function Pairing({token}) {
   const handleCreatePair = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3000/pairs', { student1_id: student1Id, student2_id: student2Id });
+      const response = await axios.post('https://moringa-pair-akon.onrender.com/pairs', { student1_id: student1Id, student2_id: student2Id });
       setPairs([...pairs, response.data]);
       setMessage('Pair created successfully');
     } catch (error) {
@@ -42,7 +42,7 @@ function Pairing({token}) {
   };
   const handleDeletePair = async (pairId) => {
     try {
-      const response = await axios.delete(`http://localhost:3000/pairs/${pairId}`);
+      const response = await axios.delete(`https://moringa-pair-akon.onrender.com/pairs/${pairId}`);
       setPairs(pairs.filter((pair) => pair.id !== pairId));
       setMessage('Pair deleted successfully');
     } catch (error) {
@@ -52,7 +52,7 @@ function Pairing({token}) {
   };
   const handleDeleteAllPairs = async () => {
     try {
-      const response = await axios.delete(`http://localhost:3000/pairs`);
+      const response = await axios.delete(`https://moringa-pair-akon.onrender.com/pairs`);
       setPairs([]);
       setMessage('All pairs deleted successfully');
     } catch (error) {
@@ -63,7 +63,7 @@ function Pairing({token}) {
   useEffect(() => {
     const fetchPairs = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/pairs');
+        const response = await axios.get('https://moringa-pair-akon.onrender.com/pairs');
         setPairs(response.data);
       } catch (error) {
         console.error(error);

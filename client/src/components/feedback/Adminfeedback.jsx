@@ -7,7 +7,7 @@ function Adminfeedback({token}) {
 
     const fetchfeedback = async () => {
         try {
-          const response = await axios.get(`http://localhost:3000/feedbacklist`, {
+          const response = await axios.get(`https://moringa-pair-akon.onrender.com/feedbacklist`, {
             headers: {
               Authorization: `Bearer ${token}`,
             },
